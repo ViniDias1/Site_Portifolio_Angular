@@ -1,7 +1,7 @@
 <app-section id="skills" title="Habilidades" subtitle="Tecnologias e ferramentas que domino" background="primary">
   <div class="skills-container">
     <div class="category-filters animate-fade-in-up">
-      @for (category of categories(); track category) {
+      @for (category of categories; track category) {
         <button 
           class="filter-button"
           [class.active]="selectedCategory() === category"

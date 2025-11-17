@@ -1,29 +1,51 @@
 .skills-container {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-8);
+  gap: var(--spacing-6);
 }
 
 .category-filters {
   display: flex;
-  gap: var(--spacing-3);
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: var(--spacing-6);
+  gap: var(--spacing-2);
+  overflow-x: auto;
+  padding: var(--spacing-4);
   background: var(--color-background-secondary);
   border-radius: var(--radius-lg);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+  justify-content: center;
+  align-items: center;
+
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: var(--radius-full);
+
+    &:hover {
+      background: var(--color-text-secondary);
+    }
+  }
 }
 
 .filter-button {
-  padding: var(--spacing-3) var(--spacing-6);
+  padding: var(--spacing-2) var(--spacing-4);
   background: var(--color-background);
   border: 2px solid var(--color-border);
   border-radius: var(--radius-full);
   font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
   cursor: pointer;
   transition: all var(--transition-fast);
   white-space: nowrap;
+  flex-shrink: 0;
 
   &:hover {
     border-color: var(--color-primary);
@@ -41,20 +63,53 @@
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--spacing-6);
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--spacing-4);
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: var(--spacing-2);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: var(--radius-full);
+
+    &:hover {
+      background: var(--color-text-secondary);
+    }
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
 }
 
 .skill-card {
-  padding: var(--spacing-6);
+  padding: var(--spacing-4);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
 
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
     border-color: var(--color-primary);
   }
 }
@@ -63,28 +118,33 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: var(--spacing-3);
+  gap: var(--spacing-2);
 }
 
 .skill-name {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
   margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
 }
 
 .skill-level {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   font-weight: var(--font-weight-bold);
   color: var(--color-primary);
+  flex-shrink: 0;
 }
 
 .skill-bar {
-  height: 8px;
+  height: 6px;
   background: var(--color-background-secondary);
   border-radius: var(--radius-full);
   overflow: hidden;
-  margin-bottom: var(--spacing-4);
 }
 
 .skill-progress {
@@ -96,14 +156,18 @@
 
 .skill-category {
   display: inline-block;
-  padding: var(--spacing-1) var(--spacing-3);
+  padding: var(--spacing-1) var(--spacing-2);
   background: var(--color-background-secondary);
   border-radius: var(--radius-sm);
-  font-size: var(--font-size-xs);
+  font-size: 10px;
   font-weight: var(--font-weight-medium);
   color: var(--color-text-tertiary);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
 }
 
 .empty-state {

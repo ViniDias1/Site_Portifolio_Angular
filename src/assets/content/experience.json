@@ -1,7 +1,7 @@
 [
   {
     "company": "IOSE - Imprensa Oficial do Estado de Sergipe",
-    "role": "Suporte Técnico, Help Desk, Técnico de LGPD",
+    "role": "Estágio Suporte Técnico, Help Desk, Técnico de LGPD",
     "from": "2023-08",
     "to": "2025-01",
     "description": "Concerto e manutenção de computadores, suporte técnico com foco em certificados digitais, configuração de redes e sistemas, além de auxiliar na manutenção dos documentos de transparência da instituição.",
@@ -18,7 +18,7 @@
   },
   {
     "company": "TRE - Tribunal Regional Eleitoral de Sergipe",
-    "role": "Full Stack Developer",
+    "role": "Estágio Full Stack Developer",
     "from": "2025-02",
     "to": "atualmente",
     "description": "Desenvolvimento de sistemas web, integrações e desevolvimento de API's e novas funcionalidades.",

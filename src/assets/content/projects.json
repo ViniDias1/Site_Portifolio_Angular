@@ -1,13 +1,13 @@
 [
   {
     "id": "proj-1",
-    "title": "Plataforma Sabiá",
+    "title": "Plataforma Sabiá TRE-SE",
     "description": "Plataforma de exibição de painéis Power BI do TRE-SE",
     "longDescription": "Esse projeto exibe painéis Power BI desenvolvidos pelos setores do TRE-SE. Meu papel nesse projeto foi criar um banco de dados no Pocketbase para armazenar as informações dos painéis, desenvolver um BFF (Backend For Fronted) em Nitro.js para servir os dados ao frontend em Angular.",
     "tags": ["Angular", "TypeScript", "Pocketbase", "Nitro.js", "Nx CLI" , "GitLab", "Git"],
     "images": [
-      "/assets/images/projects/ecommerce-api-1.jpg",
-      "/assets/images/projects/ecommerce-api-2.jpg"
+      "/assets/images/projects/proj-1/Inserir imagem do projeto.png",
+      "/assets/images/projects/proj-1/Inserir imagem do projeto.png"
     ],
     "links": {
       "github": "https://github.com/usuario/ecommerce-api",
@@ -18,58 +18,126 @@
     "startDate": "2025",
     "endDate": "2025",
     "status": "in-progress",
-    "progress": 75
+    "progress": 75,
+    "participants": [
+      { "name": "Vini Dias", "github": "https://github.com/ViniDias1" }
+    ]
   },
   {
     "id": "proj-2",
-    "title": "Sistema de Autenticação",
-    "description": "Sistema de autenticação e autorização com JWT, OAuth2 e suporte a múltiplos provedores.",
-    "longDescription": "Sistema robusto de autenticação com suporte a login social (Google, Facebook, GitHub), autenticação de dois fatores, recuperação de senha e gerenciamento de sessões.",
-    "tags": ["Node.js", "Express", "JWT", "OAuth2", "MongoDB"],
-    "images": ["/assets/images/projects/auth-system-1.jpg"],
+    "title": "Sessões Plenárias TRE-SE",
+    "description": "Sistema de acesso e gerenciamento de sessões plenárias do TRE-SE",
+    "longDescription": "Sistema desenvolvido para visualização de sessões plenárias do TRE-SE, contendo transmissão ao vivo, gravações anteriores e materiais relacionados, além de todo o histórico das sessões.",
+    "tags": ["Angular", "TypeScript", "Nitro.js", "Nx CLI", "GitLab", "Git"],
+    "images": ["/assets/images/projects/proj-2/Inserir imagem do projeto.png"],
     "links": {
       "github": "https://github.com/usuario/auth-system"
     },
     "featured": true,
-    "isPublic": true,
+    "isPublic": false,
     "startDate": "2022-08",
     "endDate": "2022-11",
-    "status": "completed"
+    "status": "in-progress",
+    "progress": 25,
+    "participants": [
+      { "name": "Vinicius Dias", "github": "https://github.com/ViniDias1" },
+      { "name": "Douglas Andrade", "github": "https://github.com/dougaandrade"},
+      { "name": "Diego Vilar", "github": "https://github.com/diegovilar"}
+    ]
   },
   {
     "id": "proj-3",
-    "title": "Dashboard Analytics",
-    "description": "Dashboard para visualização de métricas e analytics em tempo real.",
-    "longDescription": "Aplicação full stack com backend em Node.js e frontend em Angular. Processamento de dados em tempo real com WebSockets, geração de relatórios e exportação de dados.",
-    "tags": ["Node.js", "Angular", "WebSocket", "PostgreSQL", "Chart.js"],
+    "title": "Audio Plugin",
+    "description": "Estudando como faz um plugin de áudio para DAWs.",
+    "longDescription": "Aprendendo a usar C++ e JUCE para desenvolver plugins de áudio compatíveis com diversas DAWs (Digital Audio Workstations).",
+    "tags": ["C++", "JUCE", "Audio DSP", "VST", "AU"],
     "images": [
-      "/assets/images/projects/dashboard-1.jpg",
-      "/assets/images/projects/dashboard-2.jpg"
+      "/assets/images/projects/proj-3/Inserir imagem do projeto.png",
+      "/assets/images/projects/proj-3/Inserir imagem do projeto.png"
     ],
     "links": {
-      "github": "https://github.com/usuario/dashboard-analytics",
-      "demo": "https://dashboard-demo.com"
+      "github": "https://github.com/ViniDias1/ProjetoPlugin",
+      "demo": ""
     },
     "featured": false,
-    "isPublic": false,
+    "isPublic": true,
     "startDate": "2022-03",
     "endDate": "2022-07",
-    "status": "completed"
+    "status": "in-progress",
+    "progress": 5
   },
   {
     "id": "proj-4",
-    "title": "API Gateway",
-    "description": "Gateway de API com rate limiting, autenticação e roteamento inteligente.",
-    "longDescription": "Gateway centralizado para gerenciar múltiplas APIs com funcionalidades de rate limiting, caching, transformação de requisições e monitoramento.",
-    "tags": ["Node.js", "TypeScript", "Redis", "Docker", "Nginx"],
-    "images": ["/assets/images/projects/api-gateway-1.jpg"],
+    "title": "TO-DO list - Projeto IGNIS",
+    "description": "To-do list para gerenciamento de tarefas simples.",
+    "longDescription": "To-do list desenvolvido com proposito de estudo de tecnologias backend e deployment.",
+    "tags": ["Java", "Spring", "PostgreSQL", "Docker", "GitLab", "Git","JWT"],
+    "images": ["/assets/images/projects/proj-4/ignis logo.jpg","/assets/images/projects/proj-4/todo-ignis.png"],
     "links": {
-      "github": "https://github.com/usuario/api-gateway"
+      "github": "https://github.com/Projeto-IGNIS/todoList"
     },
     "featured": false,
     "isPublic": true,
     "startDate": "2021-10",
     "endDate": "2022-01",
-    "status": "planned"
+    "status": "completed",
+    "progress": 100,
+    "participants": [
+      { "name": "Vinicius Dias", "github": "https://github.com/ViniDias1" },
+      { "name": "Tayssa Passos", "github": "https://github.com/Ms-footsteps" }
+    ]
+  },
+  {
+    "id": "proj-5",
+    "title": "Site Portifólio - Vinicius Dias",
+    "description": "Site portifólio pessoal desenvolvido em Angular e hospedado no Vercel.",
+    "longDescription": "Site portifólio pessoal desenvolvido para exibir meus projetos, habilidades e informações de contato. Construído com Angular para o frontend e hospedado no Vercel para desempenho otimizado.",
+    "tags": ["Angular", "TypeScript", "Vercel", "HTML", "SCSS", "GitHub", "Git"],
+    "images": ["/assets/images/projects/proj-5/siteportifoli1.jpg","/assets/images/projects/proj-5/siteportifoli2.png"],
+    "links": {
+      "github": "https://github.com/Projeto-IGNIS/todoList"
+    },
+    "featured": false,
+    "isPublic": true,
+    "startDate": "2021-10",
+    "endDate": "2022-01",
+    "status": "in-progress",
+    "progress": 40,
+    "participants": []
+  },
+  {
+    "id": "proj-6",
+    "title": "HipoRepo",
+    "description": "Base de dados não estruturados",
+    "longDescription": "Backend do sistema HipoRep, uma plataforma para gestão de repositórios digitais. Construído com NestJS, este serviço atua como uma camada de API para gerenciar documentos, usuários, metadados, etc. E se integra diretamente com o DSpace para operações no repositório.",
+    "tags": ["NestJS","Next.js", "TypeScript", "DSpace", "PostgreSQL", "Docker", "GitLab", "Git","JWT"],
+    "images": ["/assets/images/projects/proj-6/hiporepo logo.jpg","/assets/images/projects/proj-6/login hipo repo.jpg"],
+    "links": {
+      "github": "https://github.com/Projeto-IGNIS/todoList"
+    },
+    "featured": false,
+    "isPublic": true,
+    "startDate": "2021-10",
+    "endDate": "2022-01",
+    "status": "in-progress",
+    "progress": 75,
+    "participants": [
+      { "name": "Vinicius Dias", "github": "https://github.com/ViniDias1" },
+      { "name": "João Bosco", "github": "https://github.com/boscomontalvao" },
+      { "name": "Joana dos Santos", "github": "https://github.com/JrOkean" },
+      { "name": "Alan Cristiano", "github": "https://github.com/AllanCristiano" },
+      { "name": "Wayner Roran", "github": "https://github.com/Waynerrmr" },
+      { "name": "Jefferson", "github": "https://github.com/Jeff-green3002" },
+      { "name": "Thyfanny", "github": "https://github.com/thyfanny" },
+      { "name": "Pedro Guilherme", "github": "https://github.com/PedroGFSA" },
+      { "name": "Prof. Debora Maria", "github": "https://github.com/deboramcn" },
+      { "name": "Prof. Ricardo Salgueiro", "github": "https://github.com/ricardosalgueiro" },
+      { "name": "Prof. Edilayne Salgueiro", "github": "https://github.com/edilayne-salgueiro" },
+      { "name": "Prof. André Britto", "github": "https://github.com/andcarv" },
+      { "name": "Prof. André Britto", "github": "https://github.com/andcarv" },
+      { "name": "Prof. Michel dos Santos", "github": "" },
+      { "name": "Prof. Rogério Patrício", "github": "https://github.com/Patricium" }
+
+    ]
   }
 ]

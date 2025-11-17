@@ -17,17 +17,19 @@ export class SkillsComponent {
   protected skills = toSignal(this.contentService.getSkills(), { initialValue: [] });
   protected selectedCategory = signal<string>('Todos');
   
-  protected categories = computed(() => {
-    const skills = this.skills();
-    return ['Todos', ...new Set(skills.map(s => s.category))];
-  });
+  protected categories = ['Todos', 'Backend', 'Frontend', 'Database', 'Cloud', 'DevOps', 'Framework', 'Library', 'Messaging', 'Tools'] as const;
   
   protected filteredSkills = computed(() => {
     const category = this.selectedCategory();
     if (category === 'Todos') {
       return this.skills();
     }
-    return this.skills().filter(skill => skill.category === category);
+    return this.skills().filter(skill => {
+      if (Array.isArray(skill.category)) {
+        return skill.category.includes(category);
+      }
+      return skill.category === category;
+    });
   });
 
   selectCategory(category: string): void {

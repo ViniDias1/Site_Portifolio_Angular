@@ -24,6 +24,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   protected currentImageIndex = signal(0);
   protected selectedFilter = signal<string>('Todos');
   protected highlightedProjectIds = signal<string[]>([]);
+  protected participantWarningId = signal<string>('');
 
   protected filters = ['Todos', 'Públicos', 'Privados'] as const;
 
@@ -119,5 +120,16 @@ export class ProjectsComponent implements OnInit, OnDestroy {
       'planned': 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2'
     };
     return status ? icons[status] : '';
+  }
+
+  handleParticipantClick(event: Event, githubUrl: string, participantName: string): void {
+    if (!githubUrl || githubUrl.trim() === '') {
+      event.preventDefault();
+      const participantId = `${participantName}-${Date.now()}`;
+      this.participantWarningId.set(participantId);
+      setTimeout(() => {
+        this.participantWarningId.set('');
+      }, 2000);
+    }
   }
 }

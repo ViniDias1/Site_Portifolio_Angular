@@ -11,7 +11,7 @@ export interface IProfile {
 export interface ISkill {
   name: string;
   level: number;
-  category: string;
+  category: string | string[]; // Pode ser string única ou array de categorias
   icon?: string;
 }
 
@@ -45,6 +45,7 @@ export interface IProject {
   endDate?: string;
   status?: 'completed' | 'in-progress' | 'planned'; // Status do projeto
   progress?: number; // Porcentagem de progresso (0-100) para projetos em andamento
+  participants?: { name: string; github: string }[];
 }
 
 export interface IEducation {
