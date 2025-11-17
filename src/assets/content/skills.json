@@ -1,43 +1,43 @@
 [
   {
     "name": "Java",
-    "level": 90,
+    "level": 80,
     "category": "Backend",
     "icon": "java"
   },
   {
     "name": "Python",
-    "level": 90,
+    "level": 75,
     "category": "Backend",
     "icon": "python"
   },
   {
     "name": "Spring Boot",
-    "level": 90,
+    "level": 80,
     "category": ["Backend", "Framework"],
     "icon": "spring-boot"
   },
   {
     "name": "Flask",
-    "level": 90,
+    "level": 75,
     "category": ["Backend", "Framework"],
     "icon": "flask"
   },
   {
     "name": "C++",
-    "level": 90,
+    "level": 40,
     "category": "Backend",
     "icon": "cplusplus"
   },
   {
     "name": "Django",
-    "level": 90,
+    "level": 30,
     "category": ["Backend", "Framework"],
     "icon": "django"
   },
   {
     "name": "Node.js",
-    "level": 90,
+    "level": 40,
     "category": ["Backend"],
     "icon": "nodejs"
   },
@@ -49,49 +49,49 @@
   },
   {
     "name": "JavaScript",
-    "level": 90,
+    "level": 60,
     "category": ["Backend", "Frontend"],
     "icon": "javascript"
   },
   {
     "name": "REST API",
-    "level": 90,
+    "level": 95,
     "category": "Backend",
     "icon": "api"
   },
   {
     "name": "AWS",
-    "level": 70,
+    "level": 75,
     "category": ["Cloud", "DevOps"],
     "icon": "aws"
   },
   {
     "name": "MySQL",
-    "level": 90,
+    "level": 60,
     "category": "Database",
     "icon": "mysql"
   },
   {
     "name": "Oracle",
-    "level": 90,
+    "level": 30,
     "category": "Database",
     "icon": "oracle"
   },
   {
     "name": "PostgreSQL",
-    "level": 85,
+    "level": 90,
     "category": "Database",
     "icon": "postgresql"
   },
   {
     "name": "MongoDB",
-    "level": 80,
+    "level": 50,
     "category": "Database",
     "icon": "mongodb"
   },
   {
     "name": "Redis",
-    "level": 75,
+    "level": 60,
     "category": ["Database", "Messaging"],
     "icon": "redis"
   },
@@ -103,37 +103,37 @@
   },
   {
     "name": "NestJS",
-    "level": 80,
+    "level": 85,
     "category": ["Backend", "Framework"],
     "icon": "nestjs"
   },
   {
     "name": "Angular",
-    "level": 75,
+    "level": 90,
     "category": ["Frontend", "Framework"],
     "icon": "angular"
   },
   {
     "name": "React",
-    "level": 75,
+    "level": 65,
     "category": ["Frontend", "Library"],
     "icon": "react"
   },
   {
     "name": "Rabbit MQ",
-    "level": 90,
+    "level": 40,
     "category": "Messaging",
     "icon": "rabbitmq"
   },
   {
     "name": "GitHub",
-    "level": 90,
+    "level": 95,
     "category": "Tools",
     "icon": "github"
   },
   {
     "name": "GitLab",
-    "level": 90,
+    "level": 95,
     "category": "Tools",
     "icon": "gitlab"
   },
@@ -145,13 +145,13 @@
   },
   {
     "name": "Swagger",
-    "level": 90,
+    "level": 85,
     "category": ["Backend", "Tools"],
     "icon": "swagger"
   },
   {
     "name": "Git",
-    "level": 90,
+    "level": 80,
     "category": "Tools",
     "icon": "git"
   }
