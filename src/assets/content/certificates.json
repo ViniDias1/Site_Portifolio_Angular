@@ -1,0 +1,22 @@
+[
+  {
+    "name": "AWS Certified Solutions Architect",
+    "issuer": "Amazon Web Services",
+    "date": "2023-05",
+    "credentialId": "AWS-12345",
+    "credentialUrl": "https://aws.amazon.com/verification"
+  },
+  {
+    "name": "Node.js Certified Developer",
+    "issuer": "OpenJS Foundation",
+    "date": "2022-08",
+    "credentialId": "NODEJS-67890",
+    "credentialUrl": "https://openjsf.org/certification"
+  },
+  {
+    "name": "Docker Certified Associate",
+    "issuer": "Docker Inc",
+    "date": "2021-11",
+    "credentialId": "DOCKER-11223"
+  }
+]

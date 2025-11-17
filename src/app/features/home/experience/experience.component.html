@@ -1,0 +1,91 @@
+<app-section id="experience" title="Experiência" subtitle="Minha trajetória profissional" background="secondary">
+  <div class="timeline">
+    @for (exp of experiences(); track $index) {
+      <div class="timeline-item animate-fade-in-up" [style.animation-delay.ms]="$index * 100">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <div class="experience-card" [class.expanded]="isExpanded($index)">
+            <button class="card-header" (click)="toggleExpand($index)" type="button">
+              <div class="header-main">
+                <h3 class="role">{{ exp.role }}</h3>
+                <p class="company">{{ exp.company }}</p>
+              </div>
+              <div class="header-side">
+                <span class="period">
+                  {{ formatDate(exp.from) }} - {{ formatDate(exp.to) }}
+                </span>
+                <button 
+                  class="expand-button"
+                  [attr.aria-expanded]="isExpanded($index)"
+                  aria-label="Expandir detalhes"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <polyline points="6 9 12 15 18 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+            </button>
+
+            @if (isExpanded($index)) {
+              <div class="card-body animate-fade-in-down">
+                <p class="description">{{ exp.description }}</p>
+
+                @if (exp.responsibilities && exp.responsibilities.length > 0) {
+                  <div class="responsibilities">
+                    <h4 class="section-title">Responsabilidades:</h4>
+                    <ul class="list">
+                      @for (resp of exp.responsibilities; track resp) {
+                        <li>{{ resp }}</li>
+                      }
+                    </ul>
+                  </div>
+                }
+
+                @if (exp.technologies && exp.technologies.length > 0) {
+                  <div class="technologies">
+                    <h4 class="section-title">Tecnologias:</h4>
+                    <div class="tech-tags">
+                      @for (tech of exp.technologies; track tech) {
+                        <span class="tech-tag">{{ tech }}</span>
+                      }
+                    </div>
+                  </div>
+                }
+
+                @if (exp.location) {
+                  <div class="location">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke-width="2"/>
+                      <circle cx="12" cy="10" r="3" stroke-width="2"/>
+                    </svg>
+                    <span>{{ exp.location }}</span>
+                  </div>
+                }
+
+                @if (exp.relatedProjects && exp.relatedProjects.length > 0) {
+                  <div class="related-projects">
+                    <button 
+                      class="projects-button"
+                      (click)="scrollToProjects(exp.relatedProjects)"
+                      type="button">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                      </svg>
+                      Ver {{ exp.relatedProjects.length === 1 ? 'Projeto Relacionado' : 'Projetos Relacionados' }}
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </button>
+                  </div>
+                }
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</app-section>

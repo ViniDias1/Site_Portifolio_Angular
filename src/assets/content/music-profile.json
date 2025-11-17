@@ -1,0 +1,14 @@
+{
+  "artistName": "vdyas",
+  "bio": "Artista independente.",
+  "photo": "/assets/images/artist/Face of Us cover art.jpg",
+  "genres": ["Indie", "Pop", "R&B", "Experimental"],
+  "spotifyUrl": "https://open.spotify.com/artist/seu-id",
+  "youtubeUrl": "https://youtube.com/@seu-canal",
+  "instagramUrl": "https://instagram.com/viniciussdia",
+  "statistics": {
+    "totalStreams": "0",
+    "monthlyListeners": "0",
+    "followers": "0"
+  }
+}

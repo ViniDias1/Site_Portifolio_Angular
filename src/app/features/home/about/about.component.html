@@ -1,0 +1,400 @@
+<app-section id="about" title="Sobre Mim" subtitle="Conheça um pouco mais sobre minha jornada" background="secondary">
+  <!-- Tabs Navigation -->
+  <div class="tabs-container animate-fade-in-up">
+    <button 
+      class="tab-button"
+      [class.active]="activeTab() === 'developer'"
+      (click)="setActiveTab('developer')">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <polyline points="16 18 22 12 16 6"></polyline>
+        <polyline points="8 6 2 12 8 18"></polyline>
+      </svg>
+      Desenvolvedor
+    </button>
+    <button 
+      class="tab-button"
+      [class.active]="activeTab() === 'artist'"
+      (click)="setActiveTab('artist')">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M9 18V5l12-2v13"></path>
+        <circle cx="6" cy="18" r="3"></circle>
+        <circle cx="18" cy="16" r="3"></circle>
+      </svg>
+      Artista
+    </button>
+  </div>
+
+  <!-- Developer Tab Content -->
+  @if (activeTab() === 'developer') {
+    <div class="developer-section animate-fade-in">
+      <!-- Sub-tabs for Developer -->
+      <div class="sub-tabs-container">
+        <button 
+          class="sub-tab-button"
+          [class.active]="activeDeveloperSubTab() === 'profile'"
+          (click)="setDeveloperSubTab('profile')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          Perfil
+        </button>
+        <button 
+          class="sub-tab-button"
+          [class.active]="activeDeveloperSubTab() === 'education'"
+          (click)="setDeveloperSubTab('education')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+          </svg>
+          Formação
+        </button>
+      </div>
+
+      <!-- Profile Sub-tab Content -->
+      @if (activeDeveloperSubTab() === 'profile' && profile()) {
+        <div class="about-content animate-fade-in">
+          <div class="about-image animate-fade-in-up">
+            <img [src]="profile()?.photo" [alt]="profile()?.name" class="profile-pic">
+            <div class="image-border"></div>
+          </div>
+
+          <div class="about-text animate-fade-in-up animation-delay-200">
+            <h3 class="about-title">{{ profile()?.title }}</h3>
+            <p class="about-bio">{{ profile()?.bio }}</p>
+
+            <div class="about-details">
+              @if (profile()?.location) {
+                <div class="detail-item">
+                  <span class="detail-label">Localização:</span>
+                  <span class="detail-value">{{ profile()?.location }}</span>
+                </div>
+              }
+              @if (profile()?.email) {
+                <div class="detail-item">
+                  <span class="detail-label">Email:</span>
+                  <span class="detail-value">{{ profile()?.email }}</span>
+                </div>
+              }
+              @if (profile()?.phone) {
+                <div class="detail-item">
+                  <span class="detail-label">Telefone:</span>
+                  <span class="detail-value">{{ profile()?.phone }}</span>
+                </div>
+              }
+            </div>
+
+            <div class="about-actions">
+              <app-button variant="primary" size="md" (clicked)="downloadCV()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Download CV
+              </app-button>
+              <app-button variant="outline" size="md" (clicked)="scrollToContact()">
+                Entre em Contato
+              </app-button>
+            </div>
+          </div>
+        </div>
+      }
+
+      <!-- Education Sub-tab Content -->
+      @if (activeDeveloperSubTab() === 'education') {
+        <div class="education-content animate-fade-in">
+          @if (education() && education()!.length > 0) {
+            <div class="education-grid">
+              @for (edu of education(); track $index) {
+                <div class="education-card animate-fade-in-up" [style.animation-delay.ms]="$index * 100">
+                  <div class="education-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                      <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                    </svg>
+                  </div>
+                  <div class="education-content-card">
+                    <h4 class="education-degree">{{ edu.degree }} {{ edu.field }}</h4>
+                    <p class="education-institution">{{ edu.institution }}</p>
+                    <p class="education-period">{{ edu.from }} - {{ edu.to }}</p>
+                    @if (edu.description) {
+                      <p class="education-description">{{ edu.description }}</p>
+                    }
+                  </div>
+                </div>
+              }
+            </div>
+          } @else {
+            <div class="empty-state">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+              </svg>
+              <p>Nenhuma formação acadêmica cadastrada.</p>
+            </div>
+          }
+        </div>
+      }
+    </div>
+  }
+
+  <!-- Artist Tab Content -->
+  @if (activeTab() === 'artist' && musicProfile()) {
+    <div class="music-content animate-fade-in">
+      <!-- Artist Profile -->
+      <div class="artist-profile animate-fade-in-up">
+        <div class="artist-image">
+          <img [src]="musicProfile()?.photo" [alt]="musicProfile()?.artistName" class="artist-pic">
+          <div class="image-border"></div>
+        </div>
+
+        <div class="artist-info">
+          <h3 class="artist-name">{{ musicProfile()?.artistName }}</h3>
+          <div class="artist-genres">
+            @for (genre of musicProfile()?.genres; track genre) {
+              <span class="genre-badge">{{ genre }}</span>
+            }
+          </div>
+          <p class="artist-bio">{{ musicProfile()?.bio }}</p>
+
+          <!-- Statistics -->
+          @if (musicProfile()?.statistics) {
+            <div class="artist-stats">
+              @if (musicProfile()?.statistics?.totalStreams) {
+                <div class="stat-item">
+                  <span class="stat-value">{{ musicProfile()?.statistics?.totalStreams }}</span>
+                  <span class="stat-label">Total de Streams</span>
+                </div>
+              }
+              @if (musicProfile()?.statistics?.monthlyListeners) {
+                <div class="stat-item">
+                  <span class="stat-value">{{ musicProfile()?.statistics?.monthlyListeners }}</span>
+                  <span class="stat-label">Ouvintes Mensais</span>
+                </div>
+              }
+              @if (musicProfile()?.statistics?.followers) {
+                <div class="stat-item">
+                  <span class="stat-value">{{ musicProfile()?.statistics?.followers }}</span>
+                  <span class="stat-label">Seguidores</span>
+                </div>
+              }
+            </div>
+          }
+
+          <!-- Streaming Links -->
+          <div class="streaming-links">
+            @if (musicProfile()?.spotifyUrl) {
+              <button class="streaming-btn spotify" (click)="openLink(musicProfile()?.spotifyUrl)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                </svg>
+                Spotify
+              </button>
+            }
+            @if (musicProfile()?.youtubeUrl) {
+              <button class="streaming-btn youtube" (click)="openLink(musicProfile()?.youtubeUrl)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+                YouTube
+              </button>
+            }
+            @if (musicProfile()?.instagramUrl) {
+              <button class="streaming-btn instagram" (click)="openLink(musicProfile()?.instagramUrl)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                Instagram
+              </button>
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- Music Releases -->
+      <div class="releases-section animate-fade-in-up animation-delay-200">
+        <h4 class="releases-title">Lançamentos</h4>
+        
+        @if (musicReleases() && musicReleases()!.length > 0) {
+          <div class="releases-grid">
+            @for (release of musicReleases(); track release.id) {
+              <button class="release-card" 
+                      (click)="openReleaseModal(release)"
+                      [attr.aria-label]="'Abrir detalhes de ' + release.title">
+                <div class="release-cover">
+                  <img [src]="release.coverImage" [alt]="release.title">
+                  <div class="release-overlay">
+                    <button class="play-btn">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                
+                <div class="release-info">
+                  <span [class]="'release-type ' + getReleaseBadgeClass(release.type)">
+                    {{ release.type === 'single' ? 'Single' : release.type === 'ep' ? 'EP' : 'Álbum' }}
+                  </span>
+                  <h5 class="release-title">{{ release.title }}</h5>
+                  <p class="release-artist">{{ release.artist }}</p>
+                  <div class="release-meta">
+                    <span class="release-date">{{ formatDate(release.releaseDate) }}</span>
+                    @if (release.duration) {
+                      <span class="release-duration">{{ release.duration }}</span>
+                    }
+                  </div>
+
+                  <!-- Streaming Platforms -->
+                  <div class="release-links">
+                    @if (release.streamingLinks.spotify) {
+                      <button class="platform-icon spotify" (click)="openLink(release.streamingLinks.spotify); $event.stopPropagation()" title="Spotify">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                        </svg>
+                      </button>
+                    }
+                    @if (release.streamingLinks.youtube) {
+                      <button class="platform-icon youtube" (click)="openLink(release.streamingLinks.youtube); $event.stopPropagation()" title="YouTube">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                      </button>
+                    }
+                    @if (release.streamingLinks.appleMusic) {
+                      <button class="platform-icon apple" (click)="openLink(release.streamingLinks.appleMusic); $event.stopPropagation()" title="Apple Music">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M23.997 6.124c0-.738-.065-1.47-.24-2.19-.317-1.31-1.062-2.31-2.18-3.043C21.003.517 20.373.285 19.7.164c-.517-.093-1.038-.135-1.564-.15-.04-.003-.083-.01-.124-.013H6.862c-.042.004-.084.01-.126.013-.52.015-1.04.057-1.557.15-.667.12-1.3.354-1.89.728-1.13.738-1.872 1.745-2.19 3.063-.18.716-.25 1.45-.25 2.19v11.736c0 .737.065 1.47.24 2.19.317 1.31 1.062 2.31 2.18 3.043.574.374 1.204.606 1.877.727.517.093 1.038.135 1.564.15.04.003.083.01.124.013h10.273c.042-.004.084-.01.126-.013.52-.015 1.04-.057 1.557-.15.667-.12 1.3-.354 1.89-.728 1.13-.738 1.872-1.745 2.19-3.063.18-.716.25-1.45.25-2.19V6.124z"/>
+                          <path d="M9.39 17.5c-.93 0-1.686-.757-1.686-1.686 0-.93.757-1.686 1.686-1.686.93 0 1.686.757 1.686 1.686 0 .93-.757 1.686-1.686 1.686zm6.35-8.214v5.214c0 .93-.757 1.686-1.686 1.686-.93 0-1.686-.757-1.686-1.686V7.286c0-.424.2-.824.54-1.08l3.372-2.53c.466-.35 1.134-.257 1.485.21.35.466.257 1.134-.21 1.485L15.74 6.934v2.352z" fill="#fff"/>
+                        </svg>
+                      </button>
+                    }
+                    @if (release.streamingLinks.deezer) {
+                      <button class="platform-icon deezer" (click)="openLink(release.streamingLinks.deezer); $event.stopPropagation()" title="Deezer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M18.81 4.16v3.03h5.18V4.16h-5.18zm0 3.93v3.03h5.18V8.1h-5.18zm0 3.92v3.03h5.18V12h-5.18zm0 3.93v3.03h5.18v-3.03h-5.18zM12.35 8.1v3.03h5.18V8.1h-5.18zm0 3.92v3.03h5.18V12h-5.18zm0 3.93v3.03h5.18v-3.03h-5.18zM5.9 12v3.03h5.18V12H5.9zm0 3.93v3.03h5.18v-3.03H5.9zM0 15.93v3.03h4.6v-3.03H0z"/>
+                        </svg>
+                      </button>
+                    }
+                    @if (release.streamingLinks.soundcloud) {
+                      <button class="platform-icon soundcloud" (click)="openLink(release.streamingLinks.soundcloud); $event.stopPropagation()" title="SoundCloud">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M1.175 12.225c-.051 0-.094.046-.101.1l-.233 2.154.233 2.105c.007.058.05.098.101.098.05 0 .09-.04.099-.098l.255-2.105-.27-2.154c0-.057-.045-.1-.09-.1m-.899.828c-.05 0-.09.04-.099.098l-.157 1.327.157 1.265c0 .057.045.097.1.097.05 0 .09-.04.098-.097l.18-1.265-.18-1.327c0-.057-.045-.097-.1-.097m1.79-1.093c-.063 0-.108.04-.116.106l-.201 2.196.201 2.129c.008.063.053.105.116.105.061 0 .106-.042.114-.105l.227-2.129-.227-2.196c-.008-.064-.053-.106-.114-.106m.899-.21c-.065 0-.113.049-.12.114l-.189 2.4.19 2.354c0 .066.054.115.119.115.066 0 .115-.05.122-.115l.215-2.354-.215-2.4c-.007-.066-.056-.115-.122-.115m.9-.223c-.075 0-.13.054-.136.13l-.167 2.623.167 2.583c.005.074.061.13.136.13.074 0 .13-.056.135-.13L5.23 14.36l-.194-2.622c-.005-.077-.061-.13-.135-.13m.894-.012c-.083 0-.145.062-.15.145l-.155 2.635.155 2.534c.005.083.067.145.15.145.08 0 .143-.063.148-.145l.176-2.534-.176-2.635c-.005-.083-.068-.145-.148-.145m.896.024c-.093 0-.161.07-.164.163l-.142 2.611.142 2.424c.003.094.071.164.164.164.09 0 .16-.07.162-.164l.16-2.424-.16-2.611c-.002-.093-.072-.163-.162-.163m.895.01c-.1 0-.173.074-.176.174l-.13 2.601.13 2.35c.003.101.076.175.176.175.099 0 .172-.074.175-.175l.149-2.35-.149-2.601c-.003-.1-.076-.174-.175-.174m.911.074c-.11 0-.192.083-.195.193l-.117 2.527.117 2.250c.003.11.086.193.195.193.108 0 .19-.083.193-.193l.134-2.25-.134-2.527c-.003-.11-.085-.193-.193-.193m.85.055c-.119 0-.206.091-.21.21l-.104 2.472.104 2.186c.004.119.091.21.21.21.117 0 .204-.091.208-.21l.118-2.186-.118-2.472c-.004-.119-.091-.21-.208-.21m.916-.123c-.127 0-.22.1-.223.227l-.091 2.595.091 2.123c.003.126.096.226.223.226.125 0 .218-.1.221-.226l.104-2.123-.104-2.595c-.003-.127-.096-.227-.221-.227m.882.064c-.136 0-.236.108-.239.244l-.078 2.531.078 2.06c.003.137.103.245.239.245.134 0 .233-.108.237-.245l.088-2.06-.088-2.531c-.004-.136-.103-.244-.237-.244m.908-.114c-.145 0-.25.117-.253.262l-.065 2.645.065 1.997c.003.146.108.263.253.263.143 0 .248-.117.251-.263l.074-1.997-.074-2.645c-.003-.145-.108-.262-.251-.262m.906.066c-.155 0-.267.126-.27.281l-.051 2.579.051 1.933c.003.155.115.28.27.28.153 0 .265-.125.268-.28l.058-1.933-.058-2.579c-.003-.155-.115-.281-.268-.281m.907-.118c-.164 0-.283.134-.286.298l-.039 2.697.039 1.87c.003.164.122.298.286.298.162 0 .28-.134.283-.298l.044-1.87-.044-2.697c-.003-.164-.121-.298-.283-.298m.891.155c-.172 0-.296.143-.299.315l-.026 2.542.026 1.806c.003.173.127.316.299.316.171 0 .294-.143.297-.316l.029-1.806-.029-2.542c-.003-.172-.126-.315-.297-.315m.916-.103c-.182 0-.313.152-.316.334l-.012 2.645.012 1.743c.003.182.134.334.316.334.18 0 .31-.152.313-.334l.014-1.743-.014-2.645c-.003-.182-.133-.334-.313-.334m.897.084c-.191 0-.329.161-.332.352l-.001 2.561.001 1.68c.003.191.141.352.332.352.19 0 .327-.161.33-.352l.002-1.68-.002-2.561c-.003-.191-.14-.352-.33-.352m.911-.153c-.2 0-.345.17-.348.37v4.612c.003.2.149.37.348.37.198 0 .343-.17.346-.37V14.15c-.003-.2-.148-.37-.346-.37m.897.06c-.208 0-.359.179-.362.388v4.493c.003.209.154.388.362.388.207 0 .357-.179.36-.388v-4.493c-.003-.209-.153-.388-.36-.388m.911-.092c-.217 0-.374.188-.377.407v4.678c.003.219.16.407.377.407.216 0 .372-.188.375-.407v-4.678c-.003-.219-.159-.407-.375-.407m.895.046c-.226 0-.39.197-.393.426v4.586c.003.229.167.426.393.426.225 0 .388-.197.391-.426v-4.586c-.003-.229-.166-.426-.391-.426m.916-.165c-.235 0-.406.206-.409.445v4.916c.003.239.174.445.409.445.233 0 .403-.206.406-.445V14.15c-.003-.239-.173-.445-.406-.445m.893.11c-.244 0-.421.215-.424.464v4.696c.003.249.18.464.424.464.242 0 .419-.215.422-.464V14.15c-.003-.249-.18-.464-.422-.464m7.915 0c-.243 0-.42.215-.423.464v4.696c.003.249.18.464.423.464.243 0 .42-.215.423-.464V14.15c-.003-.249-.18-.464-.423-.464m-1.337-.165c-.234 0-.405.206-.408.445v4.916c.003.239.174.445.408.445.234 0 .404-.206.407-.445V14.15c-.003-.239-.173-.445-.407-.445m-1.336.046c-.226 0-.39.197-.393.426v4.586c.003.229.167.426.393.426.225 0 .388-.197.391-.426v-4.586c-.003-.229-.166-.426-.391-.426m-1.337-.092c-.217 0-.374.188-.377.407v4.678c.003.219.16.407.377.407.216 0 .372-.188.375-.407v-4.678c-.003-.219-.159-.407-.375-.407m-1.336.06c-.208 0-.359.179-.362.388v4.493c.003.209.154.388.362.388.207 0 .357-.179.36-.388v-4.493c-.003-.209-.153-.388-.36-.388m-1.337-.153c-.2 0-.345.17-.348.37v4.612c.003.2.149.37.348.37.198 0 .343-.17.346-.37V14.15c-.003-.2-.148-.37-.346-.37m-1.336.084c-.191 0-.329.161-.332.352v2.561l.001 1.68c.003.191.141.352.332.352.19 0 .327-.161.33-.352l.002-1.68v-2.561c-.003-.191-.14-.352-.33-.352m-1.337-.103c-.182 0-.313.152-.316.334v2.645l.012 1.743c.003.182.134.334.316.334.18 0 .31-.152.313-.334l.014-1.743v-2.645c-.003-.182-.133-.334-.313-.334m-1.336.155c-.172 0-.296.143-.299.315v2.542l.026 1.806c.003.173.127.316.299.316.171 0 .294-.143.297-.316l.029-1.806v-2.542c-.003-.172-.126-.315-.297-.315m-1.337-.118c-.164 0-.283.134-.286.298v2.697l.039 1.87c.003.164.122.298.286.298.162 0 .28-.134.283-.298l.044-1.87v-2.697c-.003-.164-.121-.298-.283-.298m-1.336.066c-.155 0-.267.126-.27.281v2.579l.051 1.933c.003.155.115.28.27.28.153 0 .265-.125.268-.28l.058-1.933v-2.579c-.003-.155-.115-.281-.268-.281m-1.337-.114c-.145 0-.25.117-.253.262v2.645l.065 1.997c.003.146.108.263.253.263.143 0 .248-.117.251-.263l.074-1.997v-2.645c-.003-.145-.108-.262-.251-.262m-1.336.064c-.136 0-.236.108-.239.244v2.531l.078 2.06c.003.137.103.245.239.245.134 0 .233-.108.237-.245l.088-2.06v-2.531c-.004-.136-.103-.244-.237-.244"/>
+                        </svg>
+                      </button>
+                    }
+                  </div>
+                </div>
+              </button>
+            }
+          </div>
+        } @else {
+          <p class="no-releases">Nenhum lançamento disponível no momento.</p>
+        }
+      </div>
+    </div>
+  }
+</app-section>
+
+<!-- Release Details Modal -->
+<app-modal [isOpen]="isReleaseModalOpen()" (closed)="closeReleaseModal()">
+  @if (selectedRelease()) {
+    <div class="release-modal">
+      <div class="release-modal-header">
+        <img [src]="selectedRelease()?.coverImage" [alt]="selectedRelease()?.title" class="modal-cover">
+        <div class="modal-header-info">
+          <span [class]="'release-type-large ' + getReleaseBadgeClass(selectedRelease()!.type)">
+            {{ selectedRelease()?.type === 'single' ? 'Single' : selectedRelease()?.type === 'ep' ? 'EP' : 'Álbum' }}
+          </span>
+          <h2 class="modal-title">{{ selectedRelease()?.title }}</h2>
+          <p class="modal-artist">{{ selectedRelease()?.artist }}</p>
+          <div class="modal-meta">
+            <span>{{ formatDate(selectedRelease()!.releaseDate) }}</span>
+            @if (selectedRelease()?.genre && selectedRelease()!.genre!.length > 0) {
+              <span class="modal-genres">
+                @for (genre of selectedRelease()?.genre; track genre) {
+                  <span class="genre-tag">{{ genre }}</span>
+                }
+              </span>
+            }
+          </div>
+        </div>
+      </div>
+
+      @if (selectedRelease()?.description) {
+        <div class="release-description">
+          <p>{{ selectedRelease()?.description }}</p>
+        </div>
+      }
+
+      @if (selectedRelease()?.tracklist && selectedRelease()!.tracklist!.length > 0) {
+        <div class="tracklist-section">
+          <h3 class="tracklist-title">Faixas</h3>
+          <div class="tracklist">
+            @for (track of selectedRelease()?.tracklist; track track.number) {
+              <div class="track-item">
+                <span class="track-number">{{ track.number }}</span>
+                <span class="track-title">{{ track.title }}</span>
+                <span class="track-duration">{{ track.duration }}</span>
+              </div>
+            }
+          </div>
+          @if (selectedRelease()?.tracklist) {
+            <div class="total-duration">
+              <span>Duração total:</span>
+              <span class="duration-value">{{ getTotalDuration(selectedRelease()?.tracklist) }}</span>
+            </div>
+          }
+        </div>
+      }
+
+      <div class="modal-streaming-links">
+        <h3 class="streaming-title">Ouvir em</h3>
+        <div class="streaming-buttons">
+          @if (selectedRelease() && selectedRelease()!.streamingLinks.spotify) {
+            <button class="streaming-button spotify" (click)="openLink(selectedRelease()!.streamingLinks.spotify)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+              </svg>
+              Spotify
+            </button>
+          }
+          @if (selectedRelease() && selectedRelease()!.streamingLinks.youtube) {
+            <button class="streaming-button youtube" (click)="openLink(selectedRelease()!.streamingLinks.youtube)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+              YouTube
+            </button>
+          }
+          @if (selectedRelease() && selectedRelease()!.streamingLinks.appleMusic) {
+            <button class="streaming-button apple" (click)="openLink(selectedRelease()!.streamingLinks.appleMusic)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.997 6.124c0-.738-.065-1.47-.24-2.19-.317-1.31-1.062-2.31-2.18-3.043C21.003.517 20.373.285 19.7.164c-.517-.093-1.038-.135-1.564-.15-.04-.003-.083-.01-.124-.013H6.862c-.042.004-.084.01-.126.013-.52.015-1.04.057-1.557.15-.667.12-1.3.354-1.89.728-1.13.738-1.872 1.745-2.19 3.063-.18.716-.25 1.45-.25 2.19v11.736c0 .737.065 1.47.24 2.19.317 1.31 1.062 2.31 2.18 3.043.574.374 1.204.606 1.877.727.517.093 1.038.135 1.564.15.04.003.083.01.124.013h10.273c.042-.004.084-.01.126-.013.52-.015 1.04-.057 1.557-.15.667-.12 1.3-.354 1.89-.728 1.13-.738 1.872-1.745 2.19-3.063.18-.716.25-1.45.25-2.19V6.124z"/>
+                <path d="M9.39 17.5c-.93 0-1.686-.757-1.686-1.686 0-.93.757-1.686 1.686-1.686.93 0 1.686.757 1.686 1.686 0 .93-.757 1.686-1.686 1.686zm6.35-8.214v5.214c0 .93-.757 1.686-1.686 1.686-.93 0-1.686-.757-1.686-1.686V7.286c0-.424.2-.824.54-1.08l3.372-2.53c.466-.35 1.134-.257 1.485.21.35.466.257 1.134-.21 1.485L15.74 6.934v2.352z" fill="#fff"/>
+              </svg>
+              Apple Music
+            </button>
+          }
+          @if (selectedRelease() && selectedRelease()!.streamingLinks.deezer) {
+            <button class="streaming-button deezer" (click)="openLink(selectedRelease()!.streamingLinks.deezer)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.81 4.16v3.03h5.18V4.16h-5.18zm0 3.93v3.03h5.18V8.1h-5.18zm0 3.92v3.03h5.18V12h-5.18zm0 3.93v3.03h5.18v-3.03h-5.18zM12.35 8.1v3.03h5.18V8.1h-5.18zm0 3.92v3.03h5.18V12h-5.18zm0 3.93v3.03h5.18v-3.03h-5.18zM5.9 12v3.03h5.18V12H5.9zm0 3.93v3.03h5.18v-3.03H5.9zM0 15.93v3.03h4.6v-3.03H0z"/>
+              </svg>
+              Deezer
+            </button>
+          }
+          @if (selectedRelease() && selectedRelease()!.streamingLinks.soundcloud) {
+            <button class="streaming-button soundcloud" (click)="openLink(selectedRelease()!.streamingLinks.soundcloud)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0z"/>
+              </svg>
+              SoundCloud
+            </button>
+          }
+        </div>
+      </div>
+    </div>
+  }
+</app-modal>

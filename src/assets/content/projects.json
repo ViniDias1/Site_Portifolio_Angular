@@ -1,0 +1,75 @@
+[
+  {
+    "id": "proj-1",
+    "title": "Plataforma Sabiá",
+    "description": "Plataforma de exibição de painéis Power BI do TRE-SE",
+    "longDescription": "Esse projeto exibe painéis Power BI desenvolvidos pelos setores do TRE-SE. Meu papel nesse projeto foi criar um banco de dados no Pocketbase para armazenar as informações dos painéis, desenvolver um BFF (Backend For Fronted) em Nitro.js para servir os dados ao frontend em Angular.",
+    "tags": ["Angular", "TypeScript", "Pocketbase", "Nitro.js", "Nx CLI" , "GitLab", "Git"],
+    "images": [
+      "/assets/images/projects/ecommerce-api-1.jpg",
+      "/assets/images/projects/ecommerce-api-2.jpg"
+    ],
+    "links": {
+      "github": "https://github.com/usuario/ecommerce-api",
+      "demo": "https://api-demo.com"
+    },
+    "featured": true,
+    "isPublic": false,
+    "startDate": "2025",
+    "endDate": "2025",
+    "status": "in-progress",
+    "progress": 75
+  },
+  {
+    "id": "proj-2",
+    "title": "Sistema de Autenticação",
+    "description": "Sistema de autenticação e autorização com JWT, OAuth2 e suporte a múltiplos provedores.",
+    "longDescription": "Sistema robusto de autenticação com suporte a login social (Google, Facebook, GitHub), autenticação de dois fatores, recuperação de senha e gerenciamento de sessões.",
+    "tags": ["Node.js", "Express", "JWT", "OAuth2", "MongoDB"],
+    "images": ["/assets/images/projects/auth-system-1.jpg"],
+    "links": {
+      "github": "https://github.com/usuario/auth-system"
+    },
+    "featured": true,
+    "isPublic": true,
+    "startDate": "2022-08",
+    "endDate": "2022-11",
+    "status": "completed"
+  },
+  {
+    "id": "proj-3",
+    "title": "Dashboard Analytics",
+    "description": "Dashboard para visualização de métricas e analytics em tempo real.",
+    "longDescription": "Aplicação full stack com backend em Node.js e frontend em Angular. Processamento de dados em tempo real com WebSockets, geração de relatórios e exportação de dados.",
+    "tags": ["Node.js", "Angular", "WebSocket", "PostgreSQL", "Chart.js"],
+    "images": [
+      "/assets/images/projects/dashboard-1.jpg",
+      "/assets/images/projects/dashboard-2.jpg"
+    ],
+    "links": {
+      "github": "https://github.com/usuario/dashboard-analytics",
+      "demo": "https://dashboard-demo.com"
+    },
+    "featured": false,
+    "isPublic": false,
+    "startDate": "2022-03",
+    "endDate": "2022-07",
+    "status": "completed"
+  },
+  {
+    "id": "proj-4",
+    "title": "API Gateway",
+    "description": "Gateway de API com rate limiting, autenticação e roteamento inteligente.",
+    "longDescription": "Gateway centralizado para gerenciar múltiplas APIs com funcionalidades de rate limiting, caching, transformação de requisições e monitoramento.",
+    "tags": ["Node.js", "TypeScript", "Redis", "Docker", "Nginx"],
+    "images": ["/assets/images/projects/api-gateway-1.jpg"],
+    "links": {
+      "github": "https://github.com/usuario/api-gateway"
+    },
+    "featured": false,
+    "isPublic": true,
+    "startDate": "2021-10",
+    "endDate": "2022-01",
+    "status": "planned"
+  }
+]

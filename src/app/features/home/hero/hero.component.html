@@ -1,0 +1,71 @@
+<section id="home" class="hero">
+  <div class="container">
+    <div class="hero-content">
+      @if (profile()) {
+        <div class="hero-text animate-fade-in-up">
+          <h1 class="hero-title">
+            Olá, eu sou <br>
+            <span class="hero-name">{{ profile()?.name }}</span>
+          </h1>
+          <p class="hero-subtitle">{{ profile()?.title }}</p>
+          <p class="hero-description">{{ profile()?.bio }}</p>
+          
+          <div class="hero-actions">
+            <app-button 
+              variant="primary" 
+              size="lg"
+              (clicked)="scrollToProjects()"
+            >
+              Ver Projetos
+            </app-button>
+            <app-button 
+              variant="outline" 
+              size="lg"
+              (clicked)="scrollToContact()"
+            >
+              Entre em Contato
+            </app-button>
+          </div>
+
+          <div class="hero-info">
+            @if (profile()?.location) {
+              <div class="info-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke-width="2"/>
+                  <circle cx="12" cy="10" r="3" stroke-width="2"/>
+                </svg>
+                <span>{{ profile()?.location }}</span>
+              </div>
+            }
+            @if (profile()?.email) {
+              <div class="info-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke-width="2"/>
+                  <polyline points="22,6 12,13 2,6" stroke-width="2"/>
+                </svg>
+                <span>{{ profile()?.email }}</span>
+              </div>
+            }
+          </div>
+        </div>
+
+        <div class="hero-image animate-fade-in-up animation-delay-200">
+          <div class="image-wrapper">
+            <img 
+              [src]="profile()?.photo"
+              [alt]="profile()?.name"
+              class="profile-image"
+            >
+            <div class="image-decoration"></div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <div class="scroll-mouse">
+      <div class="scroll-wheel"></div>
+    </div>
+  </div>
+</section>

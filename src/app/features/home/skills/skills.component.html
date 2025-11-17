@@ -1,0 +1,41 @@
+<app-section id="skills" title="Habilidades" subtitle="Tecnologias e ferramentas que domino" background="primary">
+  <div class="skills-container">
+    <div class="category-filters animate-fade-in-up">
+      @for (category of categories(); track category) {
+        <button 
+          class="filter-button"
+          [class.active]="selectedCategory() === category"
+          (click)="selectCategory(category)"
+        >
+          {{ category }}
+        </button>
+      }
+    </div>
+
+    <div class="skills-grid">
+      @for (skill of filteredSkills(); track skill.name) {
+        <div class="skill-card animate-scale-in">
+          <div class="skill-header">
+            <h4 class="skill-name">{{ skill.name }}</h4>
+            <span class="skill-level">{{ skill.level }}%</span>
+          </div>
+          
+          <div class="skill-bar">
+            <div 
+              class="skill-progress" 
+              [style.width.%]="skill.level"
+            ></div>
+          </div>
+
+          <span class="skill-category">{{ skill.category }}</span>
+        </div>
+      }
+    </div>
+
+    @if (filteredSkills().length === 0) {
+      <div class="empty-state">
+        <p>Nenhuma habilidade encontrada nesta categoria.</p>
+      </div>
+    }
+  </div>
+</app-section>

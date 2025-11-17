@@ -1,0 +1,381 @@
+{
+  "profile": {
+    "name": "Vinicius Dias Valença",
+    "title": "Backend Developer",
+    "bio": "Desenvolvedor Backend",
+    "photo": "/assets/images/github_profile.jpg",
+    "email": "viniciusdvalenca@gmail.com",
+    "location": "Aracaju, SE, Brasil"
+  },
+  "skills": [
+    {
+      "name": "Node.js",
+      "level": 90,
+      "category": "Backend",
+      "icon": "nodejs"
+    },
+    {
+      "name": "TypeScript",
+      "level": 85,
+      "category": "Backend",
+      "icon": "typescript"
+    },
+    {
+      "name": "JavaScript",
+      "level": 90,
+      "category": "Backend",
+      "icon": "javascript"
+    },
+    {
+      "name": "Express.js",
+      "level": 85,
+      "category": "Framework",
+      "icon": "express"
+    },
+    {
+      "name": "NestJS",
+      "level": 80,
+      "category": "Framework",
+      "icon": "nestjs"
+    },
+    {
+      "name": "PostgreSQL",
+      "level": 85,
+      "category": "Database",
+      "icon": "postgresql"
+    },
+    {
+      "name": "MongoDB",
+      "level": 80,
+      "category": "Database",
+      "icon": "mongodb"
+    },
+    {
+      "name": "Redis",
+      "level": 75,
+      "category": "Database",
+      "icon": "redis"
+    },
+    {
+      "name": "Docker",
+      "level": 85,
+      "category": "DevOps",
+      "icon": "docker"
+    },
+    {
+      "name": "Kubernetes",
+      "level": 70,
+      "category": "DevOps",
+      "icon": "kubernetes"
+    },
+    {
+      "name": "Git",
+      "level": 90,
+      "category": "Tools",
+      "icon": "git"
+    },
+    {
+      "name": "REST API",
+      "level": 90,
+      "category": "Backend",
+      "icon": "api"
+    },
+    {
+      "name": "GraphQL",
+      "level": 75,
+      "category": "Backend",
+      "icon": "graphql"
+    },
+    {
+      "name": "AWS",
+      "level": 70,
+      "category": "Cloud",
+      "icon": "aws"
+    },
+    {
+      "name": "Angular",
+      "level": 75,
+      "category": "Frontend",
+      "icon": "angular"
+    }
+  ],
+  "experience": [
+    {
+      "company": "IOSE - Imprensa Oficial do Estado de Sergipe",
+      "role": "Suporte Técnico, Help Desk, Técnico de LGPD",
+      "from": "ATUALIZAR",
+      "to": "2025-01",
+      "description": "Desenvolvimento de APIs RESTful e microsserviços escaláveis para plataforma de e-commerce.",
+      "responsibilities": [ 
+        "PREECHER"
+      ],
+      "technologies": [
+        "PREECHER"
+      ],
+      "location": "Aracaju, SE, Brasil"
+    },
+    {
+      "company": "TRE - Tribunal Regional Eleitoral de Sergipe",
+      "role": "Full Stack Developer",
+      "from": "2025-02",
+      "to": "atualemente",
+      "description": "Desenvolvimento de sistemas web, integrações e desevolvimento de API's e novas funcionalidades.",
+      "responsibilities": [
+        "Desenvolvimento full stack com Nitron.js e Angular",
+        "Criação e manutenção de APIs RESTful",
+        "Criação e manutenção do banco de dados no Pocketbase"
+      ],
+      "technologies": [
+        "Node.js", "Pocketbase", "Java", "PostgreSQL", "Docker", "Git", "Nitro.js", "Angular", "TypeScript", "Nx CLI"
+      ],
+      "location": "Aracaju, SE, Brasil"
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-1",
+      "title": "Plataforma Sabiá",
+      "description": "Plataforma de exibição de painéis Power BI do TRE-SE",
+      "longDescription": "Esse projeto exibe painéis Power BI desenvolvidos pelos setores do TRE-SE. Meu papel nesse projeto foi criar um banco de dados no Pocketbase para armazenar as informações dos painéis, desenvolver um BFF (Backend For Fronted) em Nitro.js para servir os dados ao frontend em Angular.",
+      "tags": ["Angular", "TypeScript", "Pocketbase", "Nitro.js", "Nx CLI" , "GitLab", "Git"],
+      "images": [
+        "/assets/images/projects/ecommerce-api-1.jpg",
+        "/assets/images/projects/ecommerce-api-2.jpg"
+      ],
+      "links": {
+        "github": "https://github.com/usuario/ecommerce-api",
+        "demo": "https://api-demo.com"
+      },
+      "featured": true,
+      "isPublic": false,
+      "startDate": "2025",
+      "endDate": "2025"
+    },
+    {
+      "id": "proj-2",
+      "title": "Sistema de Autenticação",
+      "description": "Sistema de autenticação e autorização com JWT, OAuth2 e suporte a múltiplos provedores.",
+      "longDescription": "Sistema robusto de autenticação com suporte a login social (Google, Facebook, GitHub), autenticação de dois fatores, recuperação de senha e gerenciamento de sessões.",
+      "tags": ["Node.js", "Express", "JWT", "OAuth2", "MongoDB"],
+      "images": ["/assets/images/projects/auth-system-1.jpg"],
+      "links": {
+        "github": "https://github.com/usuario/auth-system"
+      },
+      "featured": true,
+      "isPublic": true,
+      "startDate": "2022-08",
+      "endDate": "2022-11"
+    },
+    {
+      "id": "proj-3",
+      "title": "Dashboard Analytics",
+      "description": "Dashboard para visualização de métricas e analytics em tempo real.",
+      "longDescription": "Aplicação full stack com backend em Node.js e frontend em Angular. Processamento de dados em tempo real com WebSockets, geração de relatórios e exportação de dados.",
+      "tags": ["Node.js", "Angular", "WebSocket", "PostgreSQL", "Chart.js"],
+      "images": [
+        "/assets/images/projects/dashboard-1.jpg",
+        "/assets/images/projects/dashboard-2.jpg"
+      ],
+      "links": {
+        "github": "https://github.com/usuario/dashboard-analytics",
+        "demo": "https://dashboard-demo.com"
+      },
+      "featured": false,
+      "isPublic": false,
+      "startDate": "2022-03",
+      "endDate": "2022-07"
+    },
+    {
+      "id": "proj-4",
+      "title": "API Gateway",
+      "description": "Gateway de API com rate limiting, autenticação e roteamento inteligente.",
+      "longDescription": "Gateway centralizado para gerenciar múltiplas APIs com funcionalidades de rate limiting, caching, transformação de requisições e monitoramento.",
+      "tags": ["Node.js", "TypeScript", "Redis", "Docker", "Nginx"],
+      "images": ["/assets/images/projects/api-gateway-1.jpg"],
+      "links": {
+        "github": "https://github.com/usuario/api-gateway"
+      },
+      "featured": false,
+      "isPublic": true,
+      "startDate": "2021-10",
+      "endDate": "2022-01"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Universidade Federal de São Paulo",
+      "degree": "Bacharelado",
+      "field": "Ciência da Computação",
+      "from": "2014-01",
+      "to": "2018-12",
+      "description": "Formação em Ciência da Computação com foco em engenharia de software e algoritmos."
+    }
+  ],
+  "certificates": [
+    {
+      "name": "AWS Certified Solutions Architect",
+      "issuer": "Amazon Web Services",
+      "date": "2023-05",
+      "credentialId": "AWS-12345",
+      "credentialUrl": "https://aws.amazon.com/verification"
+    },
+    {
+      "name": "Node.js Certified Developer",
+      "issuer": "OpenJS Foundation",
+      "date": "2022-08",
+      "credentialId": "NODEJS-67890",
+      "credentialUrl": "https://openjsf.org/certification"
+    },
+    {
+      "name": "Docker Certified Associate",
+      "issuer": "Docker Inc",
+      "date": "2021-11",
+      "credentialId": "DOCKER-11223"
+    }
+  ],
+  "socialLinks": [
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/viniciusdias",
+      "icon": "github"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com/in/viniciusdias",
+      "icon": "linkedin"
+    },
+    {
+      "platform": "Instagram",
+      "url": "https://www.instagram.com/viniciussdia/",
+      "icon": "instagram"
+    },
+    {
+      "platform": "Twitter",
+      "url": "https://twitter.com/viniciusdias",
+      "icon": "twitter"
+    }
+  ],
+  "musicProfile": {
+    "artistName": "vdyas",
+    "bio": "Artista independente.",
+    "photo": "/assets/images/artist/Face of Us cover art.jpg",
+    "genres": ["Indie", "Pop", "R&B", "Experimental"],
+    "spotifyUrl": "https://open.spotify.com/artist/seu-id",
+    "youtubeUrl": "https://youtube.com/@seu-canal",
+    "instagramUrl": "https://instagram.com/viniciussdia",
+    "statistics": {
+      "totalStreams": "0",
+      "monthlyListeners": "0",
+      "followers": "0"
+    }
+  },
+  "musicReleases": [
+    {
+      "id": "release-1",
+      "title": "Face of Us",
+      "artist": "vdyas",
+      "releaseDate": "2025-12-05",
+      "coverImage": "/assets/images/artist/Face of Us cover art.jpg",
+      "streamingLinks": {
+        "spotify": "https://open.spotify.com/track/seu-id",
+        "youtube": "https://youtube.com/watch?v=seu-id",
+        "appleMusic": "https://music.apple.com/album/seu-id",
+        "deezer": "https://deezer.com/track/seu-id"
+      },
+      "type": "ep",
+      "duration": "25:22",
+      "genre": ["Indie", "Pop", "R&B", "Experimental"],
+    "description": "Um projeto que surgiu como um teste. 'E se eu tentar fazer uma música?','Será que eu consigo?', 'O que precisa fazer ter um produto final?' e muito mais outras perguntas. Foi muito tempo de dedicação, tentando conciliar esse meu prazer com os estudos e o trabalho. Tive que aprender a produzir, mixar e masterizar tudo por conta propria. Foi um grande desafio mas me fez feliz. Um grande agradecimento ao Matt (@omatt.waves) por me ajudar nesse processo. Enfim, é preciso começar de algum lugar, e esse é o meu começo.",
+      "tracklist": [
+        {
+          "number": 1,
+          "title": "Tenshi",
+          "duration": "3:29"
+        },
+        {
+          "number": 2,
+          "title": "Face of Us",
+          "duration": "3:52"
+        },
+        {
+          "number": 3,
+          "title": "Potencial",
+          "duration": "3:51"
+        },
+        {
+          "number": 4,
+          "title": "Lovers, Two Lovers",
+          "duration": "4:35"
+        },
+        {
+          "number": 5,
+          "title": "Incan'to",
+          "duration": "4:35"
+        },
+        {
+          "number": 6,
+          "title": "Kashina",
+          "duration": "5:12"
+        }
+      ]
+    },
+        {
+      "id": "release-2",
+      "title": "PAM",
+      "artist": "vdyas,mαt.øvr",
+      "releaseDate": "2025-12-05",
+      "coverImage": "/assets/images/artist/",
+      "streamingLinks": {
+        "spotify": "https://open.spotify.com/track/seu-id",
+        "youtube": "https://youtube.com/watch?v=seu-id",
+        "appleMusic": "https://music.apple.com/album/seu-id",
+        "deezer": "https://deezer.com/track/seu-id"
+      },
+      "type": "single",
+      "duration": "25:22",
+      "genre": ["Indie", "Pop", "R&B", "Experimental"],
+    "description": "",
+      "tracklist": [
+        {
+          "number": 1,
+          "title": "PAM",
+          "duration": "3:29"
+        }
+      ]
+    },
+    {
+      "id": "release-3",
+      "title": "First Call",
+      "artist": "vdyas, mαt.øvr",
+      "releaseDate": "soon",
+      "coverImage": "/assets/images/releases/reflexoes-noturnas.jpg",
+      "streamingLinks": {
+        "spotify": "https://open.spotify.com/track/seu-id-2",
+        "youtube": "https://youtube.com/watch?v=seu-id-2",
+        "soundcloud": "https://soundcloud.com/seu-perfil/track"
+      },
+      "type": "ep",
+      "duration": "4:12",
+      "genre": ["Ambient", "Eletrônico"],
+      "description": "Colaboração experimental entre vdyas e mαt.øvr. Uma faixa atmosférica que marca o início de uma nova jornada sonora.",
+      "tracklist": [
+        {
+          "number": 1,
+          "title": "intro - First Call",
+          "duration": "4:12"
+        },
+        {
+          "number": 2,
+          "title": "Strange",
+          "duration": "4:12"
+        },
+        {
+          "number": 3,
+          "title": "Feelings",
+          "duration": "4:12"
+        }
+
+      ]
+    }
+  ]
+}

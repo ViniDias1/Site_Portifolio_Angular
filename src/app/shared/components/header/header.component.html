@@ -1,0 +1,151 @@
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <a href="#" class="logo" (click)="scrollToSection('home'); $event.preventDefault()">
+        <span class="logo-text">VD</span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Navegação principal">
+        <div class="nav-links-container">
+          @for (item of menuItems; track item.anchor) {
+            @if (item.hasDropdown) {
+              <div class="nav-dropdown" (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()">
+                <a 
+                  href="#{{ item.anchor }}" 
+                  class="nav-link"
+                  [class.active]="activeSection() === item.anchor"
+                  (click)="scrollToSection(item.anchor); $event.preventDefault()"
+                >
+                  {{ item.label }}
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="dropdown-icon">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </a>
+                @if (showAboutDropdown()) {
+                  <div class="dropdown-menu animate-fade-in" (mouseenter)="keepDropdownOpen()" (mouseleave)="hideDropdown()">
+                    @for (dropItem of aboutDropdownItems; track dropItem.tab) {
+                      <a 
+                        href="#{{ dropItem.anchor }}" 
+                        class="dropdown-item"
+                        (click)="scrollToSection(dropItem.anchor, dropItem.tab); $event.preventDefault()"
+                      >
+                        @if (dropItem.tab === 'developer') {
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                          </svg>
+                        } @else {
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M9 18V5l12-2v13"></path>
+                            <circle cx="6" cy="18" r="3"></circle>
+                            <circle cx="18" cy="16" r="3"></circle>
+                          </svg>
+                        }
+                        {{ dropItem.label }}
+                      </a>
+                    }
+                  </div>
+                }
+              </div>
+            } @else {
+              <a 
+                href="#{{ item.anchor }}" 
+                class="nav-link"
+                [class.active]="activeSection() === item.anchor"
+                (click)="scrollToSection(item.anchor); $event.preventDefault()"
+              >
+                {{ item.label }}
+              </a>
+            }
+          }
+          <div 
+            class="nav-indicator" 
+            [style.left]="indicatorStyle().left"
+            [style.width]="indicatorStyle().width"
+          ></div>
+        </div>
+        
+        <button 
+          class="theme-toggle"
+          (click)="toggleTheme()"
+          [attr.aria-label]="theme() === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro'"
+        >
+          @if (theme() === 'light') {
+            <!-- Ícone de Lua (tema escuro) -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          } @else {
+            <!-- Ícone de Sol (tema claro) -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="12" cy="12" r="5" stroke-width="2"/>
+              <line x1="12" y1="1" x2="12" y2="3" stroke-width="2" stroke-linecap="round"/>
+              <line x1="12" y1="21" x2="12" y2="23" stroke-width="2" stroke-linecap="round"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke-width="2" stroke-linecap="round"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke-width="2" stroke-linecap="round"/>
+              <line x1="1" y1="12" x2="3" y2="12" stroke-width="2" stroke-linecap="round"/>
+              <line x1="21" y1="12" x2="23" y2="12" stroke-width="2" stroke-linecap="round"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke-width="2" stroke-linecap="round"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          }
+        </button>
+      </nav>
+
+      <button 
+        class="menu-toggle" 
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="isMenuOpen()"
+        aria-label="Menu"
+      >
+        <span class="hamburger" [class.active]="isMenuOpen()"></span>
+      </button>
+    </div>
+  </div>
+
+  @if (isMenuOpen()) {
+    <div class="mobile-menu animate-fade-in-down">
+      <nav class="mobile-nav" aria-label="Navegação mobile">
+        @for (item of menuItems; track item.anchor) {
+          <a 
+            href="#{{ item.anchor }}" 
+            class="mobile-nav-link"
+            (click)="scrollToSection(item.anchor); $event.preventDefault()"
+          >
+            {{ item.label }}
+          </a>
+        }
+        
+        <button 
+          class="mobile-theme-toggle"
+          (click)="toggleTheme()"
+          [attr.aria-label]="theme() === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro'"
+        >
+          @if (theme() === 'light') {
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Tema Escuro</span>
+          } @else {
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="12" cy="12" r="5" stroke-width="2"/>
+              <line x1="12" y1="1" x2="12" y2="3" stroke-width="2" stroke-linecap="round"/>
+              <line x1="12" y1="21" x2="12" y2="23" stroke-width="2" stroke-linecap="round"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke-width="2" stroke-linecap="round"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke-width="2" stroke-linecap="round"/>
+              <line x1="1" y1="12" x2="3" y2="12" stroke-width="2" stroke-linecap="round"/>
+              <line x1="21" y1="12" x2="23" y2="12" stroke-width="2" stroke-linecap="round"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke-width="2" stroke-linecap="round"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>Tema Claro</span>
+          }
+        </button>
+      </nav>
+    </div>
+  }
+</header>
+
+@if (isMenuOpen()) {
+  <div class="menu-backdrop" (click)="closeMenu()" (keydown.escape)="closeMenu()" tabindex="-1"></div>
+}

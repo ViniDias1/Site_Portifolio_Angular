@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Node.js",
+    "level": 90,
+    "category": "Backend",
+    "icon": "nodejs"
+  },
+  {
+    "name": "TypeScript",
+    "level": 85,
+    "category": "Backend",
+    "icon": "typescript"
+  },
+  {
+    "name": "JavaScript",
+    "level": 90,
+    "category": "Backend",
+    "icon": "javascript"
+  },
+  {
+    "name": "Express.js",
+    "level": 85,
+    "category": "Framework",
+    "icon": "express"
+  },
+  {
+    "name": "NestJS",
+    "level": 80,
+    "category": "Framework",
+    "icon": "nestjs"
+  },
+  {
+    "name": "PostgreSQL",
+    "level": 85,
+    "category": "Database",
+    "icon": "postgresql"
+  },
+  {
+    "name": "MongoDB",
+    "level": 80,
+    "category": "Database",
+    "icon": "mongodb"
+  },
+  {
+    "name": "Redis",
+    "level": 75,
+    "category": "Database",
+    "icon": "redis"
+  },
+  {
+    "name": "Docker",
+    "level": 85,
+    "category": "DevOps",
+    "icon": "docker"
+  },
+  {
+    "name": "Kubernetes",
+    "level": 70,
+    "category": "DevOps",
+    "icon": "kubernetes"
+  },
+  {
+    "name": "Git",
+    "level": 90,
+    "category": "Tools",
+    "icon": "git"
+  },
+  {
+    "name": "REST API",
+    "level": 90,
+    "category": "Backend",
+    "icon": "api"
+  },
+  {
+    "name": "GraphQL",
+    "level": 75,
+    "category": "Backend",
+    "icon": "graphql"
+  },
+  {
+    "name": "AWS",
+    "level": 70,
+    "category": "Cloud",
+    "icon": "aws"
+  },
+  {
+    "name": "Angular",
+    "level": 75,
+    "category": "Frontend",
+    "icon": "angular"
+  }
+]

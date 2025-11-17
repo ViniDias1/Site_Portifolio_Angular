@@ -1,0 +1,36 @@
+[
+  {
+    "company": "IOSE - Imprensa Oficial do Estado de Sergipe",
+    "role": "Suporte Técnico, Help Desk, Técnico de LGPD",
+    "from": "2023-08",
+    "to": "2025-01",
+    "description": "Concerto e manutenção de computadores, suporte técnico com foco em certificados digitais, configuração de redes e sistemas, além de auxiliar na manutenção dos documentos de transparência da instituição.",
+    "responsibilities": [ 
+      "Concertar e manter computadores e periféricos",
+      "Prestar suporte técnico aos usuários internos e externos",
+        "Auxiliar na manutenção dos documentos de transparência da instituição",
+      "Realizar manutenção de redes e sistemas"
+    ],
+    "technologies": [
+      "Certificados Digitais", "Redes", "Sistemas Operacionais", "Manutenção de Hardware", "Manutenção de Software"
+    ],
+    "location": "Aracaju, SE, Brasil"
+  },
+  {
+    "company": "TRE - Tribunal Regional Eleitoral de Sergipe",
+    "role": "Full Stack Developer",
+    "from": "2025-02",
+    "to": "atualmente",
+    "description": "Desenvolvimento de sistemas web, integrações e desevolvimento de API's e novas funcionalidades.",
+    "responsibilities": [
+      "Desenvolvimento full stack com Nitron.js e Angular",
+      "Criação e manutenção de APIs RESTful",
+      "Criação e manutenção do banco de dados no Pocketbase"
+    ],
+    "technologies": [
+      "Node.js", "Pocketbase", "Java", "PostgreSQL", "Docker", "Git", "Nitro.js", "Angular", "TypeScript", "Nx CLI"
+    ],
+    "location": "Aracaju, SE, Brasil",
+    "relatedProjects": ["proj-1"]
+  }
+]
