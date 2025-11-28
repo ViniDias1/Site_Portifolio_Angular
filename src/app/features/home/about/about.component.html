@@ -262,6 +262,13 @@
                         </svg>
                       </button>
                     }
+                    @if (release.streamingLinks.youtubeMusic) {
+                      <button class="platform-icon youtube-music" (click)="openLink(release.streamingLinks.youtubeMusic); $event.stopPropagation()" title="YouTube Music">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                      </button>
+                    }
                     @if (release.streamingLinks.appleMusic) {
                       <button class="platform-icon apple" (click)="openLink(release.streamingLinks.appleMusic); $event.stopPropagation()" title="Apple Music">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -274,6 +281,20 @@
                       <button class="platform-icon deezer" (click)="openLink(release.streamingLinks.deezer); $event.stopPropagation()" title="Deezer">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M18.81 4.16v3.03h5.18V4.16h-5.18zm0 3.93v3.03h5.18V8.1h-5.18zm0 3.92v3.03h5.18V12h-5.18zm0 3.93v3.03h5.18v-3.03h-5.18zM12.35 8.1v3.03h5.18V8.1h-5.18zm0 3.92v3.03h5.18V12h-5.18zm0 3.93v3.03h5.18v-3.03h-5.18zM5.9 12v3.03h5.18V12H5.9zm0 3.93v3.03h5.18v-3.03H5.9zM0 15.93v3.03h4.6v-3.03H0z"/>
+                        </svg>
+                      </button>
+                    }
+                    @if (release.streamingLinks.tidal) {
+                      <button class="platform-icon tidal" (click)="openLink(release.streamingLinks.tidal); $event.stopPropagation()" title="Tidal">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M3 3h6v6H3V3zm12 0h6v6h-6V3zM3 15h6v6H3v-6zm12 0h6v6h-6v-6z"/>
+                        </svg>
+                      </button>
+                    }
+                    @if (release.streamingLinks.amazonMusic) {
+                      <button class="platform-icon amazon" (click)="openLink(release.streamingLinks.amazonMusic); $event.stopPropagation()" title="Amazon Music">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 3v10.5l3-1.5 3 1.5V3h-6zM4 6v12h8v-2H6V8h6V6H4z"/>
                         </svg>
                       </button>
                     }
@@ -368,6 +389,14 @@
               YouTube
             </button>
           }
+          @if (selectedRelease() && selectedRelease()!.streamingLinks.youtubeMusic) {
+            <button class="streaming-button youtube-music" (click)="openLink(selectedRelease()!.streamingLinks.youtubeMusic)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+              YouTube Music
+            </button>
+          }
           @if (selectedRelease() && selectedRelease()!.streamingLinks.appleMusic) {
             <button class="streaming-button apple" (click)="openLink(selectedRelease()!.streamingLinks.appleMusic)">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -383,6 +412,22 @@
                 <path d="M18.81 4.16v3.03h5.18V4.16h-5.18zm0 3.93v3.03h5.18V8.1h-5.18zm0 3.92v3.03h5.18V12h-5.18zm0 3.93v3.03h5.18v-3.03h-5.18zM12.35 8.1v3.03h5.18V8.1h-5.18zm0 3.92v3.03h5.18V12h-5.18zm0 3.93v3.03h5.18v-3.03h-5.18zM5.9 12v3.03h5.18V12H5.9zm0 3.93v3.03h5.18v-3.03H5.9zM0 15.93v3.03h4.6v-3.03H0z"/>
               </svg>
               Deezer
+            </button>
+          }
+          @if (selectedRelease() && selectedRelease()!.streamingLinks.tidal) {
+            <button class="streaming-button tidal" (click)="openLink(selectedRelease()!.streamingLinks.tidal)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 3h6v6H3V3zm12 0h6v6h-6V3zM3 15h6v6H3v-6zm12 0h6v6h-6v-6z"/>
+              </svg>
+              Tidal
+            </button>
+          }
+          @if (selectedRelease() && selectedRelease()!.streamingLinks.amazonMusic) {
+            <button class="streaming-button amazon" (click)="openLink(selectedRelease()!.streamingLinks.amazonMusic)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 3v10.5l3-1.5 3 1.5V3h-6zM4 6v12h8v-2H6V8h6V6H4z"/>
+              </svg>
+              Amazon Music
             </button>
           }
           @if (selectedRelease() && selectedRelease()!.streamingLinks.soundcloud) {

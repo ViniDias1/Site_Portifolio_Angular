@@ -8,8 +8,10 @@
     "streamingLinks": {
       "spotify": "https://open.spotify.com/track/seu-id",
       "youtube": "https://youtube.com/watch?v=seu-id",
+      "youtubeMusic": "https://music.youtube.com/watch?v=seu-id",
       "appleMusic": "https://music.apple.com/album/seu-id",
-      "deezer": "https://deezer.com/track/seu-id"
+      "deezer": "https://deezer.com/track/seu-id",
+      "amazonMusic": ""
     },
     "type": "ep",
     "duration": "25:22",
@@ -50,59 +52,25 @@
   },
   {
     "id": "release-2",
-    "title": "PAM",
-    "artist": "vdyas,mαt.øvr",
-    "releaseDate": "2025-12-05",
-    "coverImage": "/assets/images/artist/",
+    "title": "J U L Y A",
+    "artist": "mat.øvr, vdyas",
+    "releaseDate": "2025-11-27",
+    "coverImage": "/assets/images/artist/J U L Y A art cover.png",
     "streamingLinks": {
       "spotify": "https://open.spotify.com/track/seu-id",
       "youtube": "https://youtube.com/watch?v=seu-id",
-      "appleMusic": "https://music.apple.com/album/seu-id",
-      "deezer": "https://deezer.com/track/seu-id"
+      "youtubeMusic": "https://music.youtube.com/watch?v=seu-id",
+      "appleMusic": "https://geo.music.apple.com/album/j-u-l-y-a-feat-vdyas-single/1856448707",
+      "deezer": "https://www.deezer.com/album/865039682",
+      "tidal": "http://www.tidal.com/album/477194682",
+      "amazonMusic": "https://music.amazon.com/albums/B0G473JW5X?ref=dm_ff_amazonmusic_3p"
     },
     "type": "single",
-    "duration": "25:22",
-    "genre": ["Indie", "Pop", "R&B", "Experimental"],
+    "duration": "3:00",
+    "genre": ["Alternativa", "Experimental"],
     "description": "",
-    "tracklist": [
-      {
-        "number": 1,
-        "title": "PAM",
-        "duration": "3:29"
-      }
-    ]
-  },
-  {
-    "id": "release-3",
-    "title": "First Call",
-    "artist": "vdyas, mαt.øvr",
-    "releaseDate": "soon",
-    "coverImage": "/assets/images/releases/reflexoes-noturnas.jpg",
-    "streamingLinks": {
-      "spotify": "https://open.spotify.com/track/seu-id-2",
-      "youtube": "https://youtube.com/watch?v=seu-id-2",
-      "soundcloud": "https://soundcloud.com/seu-perfil/track"
-    },
-    "type": "ep",
-    "duration": "4:12",
-    "genre": ["Ambient", "Eletrônico"],
-    "description": "Colaboração experimental entre vdyas e mαt.øvr. Uma faixa atmosférica que marca o início de uma nova jornada sonora.",
-    "tracklist": [
-      {
-        "number": 1,
-        "title": "intro - First Call",
-        "duration": "4:12"
-      },
-      {
-        "number": 2,
-        "title": "Strange",
-        "duration": "4:12"
-      },
-      {
-        "number": 3,
-        "title": "Feelings",
-        "duration": "4:12"
-      }
-    ]
+    "tracklist": []
   }
+
+  
 ]

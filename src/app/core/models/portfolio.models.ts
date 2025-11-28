@@ -80,8 +80,11 @@ export interface IMusicRelease {
   streamingLinks: {
     spotify?: string;
     youtube?: string;
+    youtubeMusic?: string;
     appleMusic?: string;
     deezer?: string;
+    tidal?: string;
+    amazonMusic?: string;
     soundcloud?: string;
   };
   type: 'single' | 'album' | 'ep';
