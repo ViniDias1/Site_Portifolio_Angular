@@ -15,14 +15,26 @@ export class FooterComponent {
   protected readonly currentYear = new Date().getFullYear();
   protected socialLinks$ = this.contentService.getSocialLinks();
 
-  downloadCV(): void {
+  showCVOptions = false;
+
+  downloadCV(format: 'pdf' | 'docx'): void {
+    const fileMap = {
+      pdf: '/Currículo-VINICIUS DIAS VALENÇA.pdf',
+      docx: '/Vinicius Dias Valença.docx'
+    };
     const link = document.createElement('a');
-    link.href = '/assets/cv/CV_Vinicius_Dias.pdf';
-    link.download = 'CV_Vinicius_Dias.pdf';
+    link.href = fileMap[format];
+    link.download = fileMap[format].split('/').pop()!;
     link.click();
+    this.showCVOptions = false;
   }
 
-  openCV(): void {
-    window.open('/assets/cv/CV_Vinicius_Dias.pdf', '_blank');
+  viewCV(): void {
+    window.open('/Currículo-VINICIUS DIAS VALENÇA.pdf', '_blank');
+    this.showCVOptions = false;
+  }
+
+  toggleCVOptions(): void {
+    this.showCVOptions = !this.showCVOptions;
   }
 }

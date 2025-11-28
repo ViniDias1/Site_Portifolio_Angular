@@ -3,7 +3,7 @@
     <div class="footer-content">
       <div class="footer-section">
         <h3 class="footer-title">Vinicius Dias</h3>
-        <p class="footer-text">Backend Developer apaixonado por criar soluções escaláveis e eficientes.</p>
+        <p class="footer-text">Mexe com letrinas coloridas e faz música 👍</p>
       </div>
 
       <div class="footer-section">
@@ -19,17 +19,23 @@
       <div class="footer-section">
         <h4 class="footer-subtitle">Currículo</h4>
         <div class="cv-actions">
-          <button class="cv-button" (click)="downloadCV()">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            Download CV
-          </button>
-          <button class="cv-button outline" (click)="openCV()">
+          <button class="cv-button" (click)="viewCV()">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             Visualizar CV
+          </button>
+          <button class="cv-button" (click)="downloadCV('pdf')">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Baixar PDF
+          </button>
+          <button class="cv-button" (click)="downloadCV('docx')">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Baixar DOCX
           </button>
         </div>
       </div>

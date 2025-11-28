@@ -1,3 +1,4 @@
+// ...existing imports...
 import { Component, inject, ChangeDetectionStrategy, signal, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -20,17 +21,22 @@ type DeveloperSubTab = 'profile' | 'education' | 'certificates';
 export class AboutComponent implements OnInit, OnDestroy {
   private readonly contentService = inject(ContentService);
   private tabChangeListener?: EventListener;
-  
-  protected profile = toSignal(this.contentService.getProfile());
-  protected musicProfile = toSignal(this.contentService.getMusicProfile());
-  protected musicReleases = toSignal(this.contentService.getMusicReleases());
-  protected education = toSignal(this.contentService.getEducation());
-  protected certificates = toSignal(this.contentService.getCertificates());
-  
-  protected activeTab = signal<TabType>('developer');
-  protected activeDeveloperSubTab = signal<DeveloperSubTab>('profile');
-  protected selectedRelease = signal<IMusicRelease | null>(null);
-  protected isReleaseModalOpen = signal(false);
+
+  public profile = toSignal(this.contentService.getProfile());
+    public viewCV(): void {
+      window.open('/Currículo-VINICIUS DIAS VALENÇA.pdf', '_blank');
+      this.showCVOptions = false;
+    }
+  public musicProfile = toSignal(this.contentService.getMusicProfile());
+  public musicReleases = toSignal(this.contentService.getMusicReleases());
+  public education = toSignal(this.contentService.getEducation());
+  public certificates = toSignal(this.contentService.getCertificates());
+
+  public activeTab = signal<TabType>('developer');
+  public activeDeveloperSubTab = signal<DeveloperSubTab>('profile');
+  public selectedRelease = signal<IMusicRelease | null>(null);
+  public isReleaseModalOpen = signal(false);
+  public showCVOptions = false;
 
   ngOnInit(): void {
     this.tabChangeListener = ((event: CustomEvent) => {
@@ -49,20 +55,31 @@ export class AboutComponent implements OnInit, OnDestroy {
     }
   }
 
-  setActiveTab(tab: TabType): void {
+  public setActiveTab(tab: TabType): void {
     this.activeTab.set(tab);
   }
 
-  setDeveloperSubTab(subTab: DeveloperSubTab): void {
+  public setDeveloperSubTab(subTab: DeveloperSubTab): void {
     this.activeDeveloperSubTab.set(subTab);
   }
 
-  downloadCV(): void {
+  public downloadCV(format: 'pdf' | 'docx'): void {
+    const fileMap = {
+      pdf: '/Currículo-VINICIUS DIAS VALENÇA.pdf',
+      docx: '/Vinicius Dias Valença.docx'
+    };
     const link = document.createElement('a');
-    link.href = '/assets/cv/CV_Vinicius_Dias.pdf';
-    link.download = 'CV_Vinicius_Dias.pdf';
+    link.href = fileMap[format];
+    link.download = fileMap[format].split('/').pop()!;
     link.click();
+    this.showCVOptions = false;
   }
+
+  public toggleCVOptions(): void {
+    this.showCVOptions = !this.showCVOptions;
+  }
+
+  // ...existing code...
 
   scrollToContact(): void {
     const element = document.getElementById('contact');

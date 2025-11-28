@@ -84,13 +84,18 @@
               }
             </div>
 
-            <div class="about-actions">
-              <app-button variant="primary" size="md" (clicked)="downloadCV()">
+            <div class="about-actions" style="position: relative;">
+              <app-button variant="primary" size="md" (clicked)="toggleCVOptions()">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 Download CV
               </app-button>
+              <div *ngIf="showCVOptions" class="cv-options-menu" style="position: absolute; z-index: 10; background: white; border: 1px solid #ccc; border-radius: 4px; min-width: 140px; box-shadow: 0 2px 8px rgba(0,0,0,0.12); top: 110%; left: 0;">
+                <button style="width: 100%; padding: 8px 12px; border: none; background: none; text-align: left; cursor: pointer;" (click)="viewCV()">Visualizar CV</button>
+                <button style="width: 100%; padding: 8px 12px; border: none; background: none; text-align: left; cursor: pointer;" (click)="downloadCV('pdf')">Baixar PDF</button>
+                <button style="width: 100%; padding: 8px 12px; border: none; background: none; text-align: left; cursor: pointer;" (click)="downloadCV('docx')">Baixar DOCX</button>
+              </div>
               <app-button variant="outline" size="md" (clicked)="scrollToContact()">
                 Entre em Contato
               </app-button>
