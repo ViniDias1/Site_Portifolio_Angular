@@ -109,7 +109,7 @@
     "id": "proj-6",
     "title": "HipoRepo",
     "description": "Base de dados não estruturados",
-    "longDescription": "Backend do sistema HipoRep, uma plataforma para gestão de repositórios digitais. Construído com NestJS, este serviço atua como uma camada de API para gerenciar documentos, usuários, metadados, etc. E se integra diretamente com o DSpace para operações no repositório.",
+    "longDescription": "Participei do desenvolvimento tanto do frontend quanto do backend do sistema HipoRepo, uma plataforma para gestão de repositórios digitais. Construído com NestJS, este serviço atua como uma camada de API para gerenciar documentos, usuários, metadados, etc. E se integra diretamente com o DSpace para operações no repositório.",
     "tags": ["NestJS","Next.js", "TypeScript", "DSpace", "PostgreSQL", "Docker", "GitLab", "Git","JWT"],
     "images": ["/assets/images/projects/proj-6/hiporepo logo.jpg","/assets/images/projects/proj-6/login hipo repo.jpg"],
     "links": {
