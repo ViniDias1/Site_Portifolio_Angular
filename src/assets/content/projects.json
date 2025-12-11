@@ -107,10 +107,17 @@
   },
   {
     "id": "proj-6",
+<<<<<<< HEAD
     "title": "HipoRepo - Repositório Digital UFS",
     "description": "Plataforma institucional para gestão de repositórios digitais",
     "longDescription": "Plataforma institucional da UFS para gestão de repositórios digitais destinada a armazenar e organizar dados não estruturados. Backend desenvolvido com NestJS atuando como camada de API para gerenciar documentos, usuários, metadados e integrações diretas com o DSpace. Frontend desenvolvido com Next.js (React + TypeScript) com foco em usabilidade, velocidade e arquitetura escalável. Implantação utilizando AWS EC2.",
     "tags": ["NestJS", "Next.js", "React", "TypeScript", "PostgreSQL", "Redis", "Prisma", "Axios", "Passport.js", "DSpace", "AWS EC2", "Docker", "GitLab", "Git"],
+=======
+    "title": "HipoRepo",
+    "description": "Base de dados não estruturados",
+    "longDescription": "Participei do desenvolvimento tanto do frontend quanto do backend do sistema HipoRepo, uma plataforma para gestão de repositórios digitais. Construído com NestJS, este serviço atua como uma camada de API para gerenciar documentos, usuários, metadados, etc. E se integra diretamente com o DSpace para operações no repositório.",
+    "tags": ["NestJS","Next.js", "TypeScript", "DSpace", "PostgreSQL", "Docker", "GitLab", "Git","JWT"],
+>>>>>>> 60e2308de944231a737e181096a88c42d61f67cb
     "images": ["/assets/images/projects/proj-6/hiporepo logo.jpg","/assets/images/projects/proj-6/login hipo repo.jpg"],
     "links": {
       "github": "https://github.com/HipoRepo"

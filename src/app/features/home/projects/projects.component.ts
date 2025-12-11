@@ -2,14 +2,13 @@ import { Component, inject, signal, computed, ChangeDetectionStrategy, OnInit, O
 import { CommonModule } from '@angular/common';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { SectionComponent } from '../../../shared/components/section/section.component';
-import { CardComponent } from '../../../shared/components/card/card.component';
 import { ModalComponent } from '../../../shared/components/modal/modal.component';
 import { ContentService } from '../../../core/services/content.service';
 import { IProject } from '../../../core/models/portfolio.models';
 
 @Component({
   selector: 'app-projects',
-  imports: [CommonModule, SectionComponent, CardComponent, ModalComponent],
+  imports: [CommonModule, SectionComponent, ModalComponent],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
