@@ -26,12 +26,25 @@ export class ExperienceComponent {
   }
 
   formatDate(dateString: string): string {
-    if (dateString.toLowerCase() === 'present' || dateString.toLowerCase() === 'atual') {
+    if (!dateString || dateString.toLowerCase() === 'present' || dateString.toLowerCase() === 'atual' || dateString.toLowerCase() === 'current') {
       return 'Atual';
     }
+    
     const [year, month] = dateString.split('-');
+    if (!year) return dateString;
+    
+    if (!month) {
+      return year;
+    }
+    
     const months = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
-    return `${months[Number.parseInt(month) - 1]} ${year}`;
+    const monthIndex = Number.parseInt(month) - 1;
+    
+    if (monthIndex >= 0 && monthIndex < 12) {
+      return `${months[monthIndex]}/${year}`;
+    }
+    
+    return dateString;
   }
 
   scrollToProjects(projectIds: string[]): void {

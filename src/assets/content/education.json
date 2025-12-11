@@ -3,16 +3,24 @@
     "institution": "Colégio Amadeus",
     "degree": "Ensino Fundamental e Médio",
     "field": "",
-    "from": "",
-    "to": "",
-    "description": ""
+    "from": "2008",
+    "to": "2020",
+    "description": "Formação básica e ensino médio completo."
   },
   {
     "institution": "Universidade Federal de Sergipe",
     "degree": "Bacharelado",
     "field": "Sistemas de Informação",
     "from": "2021-08",
-    "to": "2025-02",
-    "description": ""
+    "to": "2026-02",
+    "description": "Graduação em Sistemas de Informação com foco em desenvolvimento de software, arquitetura de sistemas, inteligência artificial e gestão de projetos."
+  },
+  {
+    "institution": "Wizard",
+    "degree": "Certificação",
+    "field": "Inglês Avançado",
+    "from": "2019",
+    "to": "2021",
+    "description": "Curso completo de inglês com certificação de nível avançado."
   }
 ]

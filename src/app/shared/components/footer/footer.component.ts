@@ -19,8 +19,8 @@ export class FooterComponent {
 
   downloadCV(format: 'pdf' | 'docx'): void {
     const fileMap = {
-      pdf: '/Currículo-VINICIUS DIAS VALENÇA.pdf',
-      docx: '/Vinicius Dias Valença.docx'
+      pdf: '/curriculo - VINICIUS DIAS VALENCA.pdf',
+      docx: '/curriculo - VINICIUS DIAS VALENCA'
     };
     const link = document.createElement('a');
     link.href = fileMap[format];
@@ -30,7 +30,7 @@ export class FooterComponent {
   }
 
   viewCV(): void {
-    window.open('/Currículo-VINICIUS DIAS VALENÇA.pdf', '_blank');
+    window.open('/curriculo - VINICIUS DIAS VALENCA.pdf', '_blank');
     this.showCVOptions = false;
   }
 

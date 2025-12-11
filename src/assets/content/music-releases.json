@@ -6,12 +6,9 @@
     "releaseDate": "2025-12-05",
     "coverImage": "/assets/images/artist/Face of Us cover art.jpg",
     "streamingLinks": {
-      "spotify": "https://open.spotify.com/track/seu-id",
-      "youtube": "https://youtube.com/watch?v=seu-id",
-      "youtubeMusic": "https://music.youtube.com/watch?v=seu-id",
-      "appleMusic": "https://music.apple.com/album/seu-id",
-      "deezer": "https://deezer.com/track/seu-id",
-      "amazonMusic": ""
+      "spotify": "https://open.spotify.com/intl-pt/artist/7srBclpSKIcueQjGgz5GLW?si=ySJ7OMOUSSmrC6VEn8j0qA",
+      "youtubeMusic": "https://music.youtube.com/playlist?list=OLAK5uy_nSCBptZcKLuPZ9nsMehF6hOAufrEoKmiA",
+      "appleMusic": "https://music.apple.com/br/album/face-of-us-ep/1854574190"
     },
     "type": "ep",
     "duration": "25:22",
@@ -57,13 +54,9 @@
     "releaseDate": "2025-11-27",
     "coverImage": "/assets/images/artist/J U L Y A art cover.png",
     "streamingLinks": {
-      "spotify": "https://open.spotify.com/track/seu-id",
-      "youtube": "https://youtube.com/watch?v=seu-id",
-      "youtubeMusic": "https://music.youtube.com/watch?v=seu-id",
-      "appleMusic": "https://geo.music.apple.com/album/j-u-l-y-a-feat-vdyas-single/1856448707",
-      "deezer": "https://www.deezer.com/album/865039682",
-      "tidal": "http://www.tidal.com/album/477194682",
-      "amazonMusic": "https://music.amazon.com/albums/B0G473JW5X?ref=dm_ff_amazonmusic_3p"
+      "spotify": "https://open.spotify.com/intl-pt/track/64PEkG1MsxdjsDEZy575It?si=ab21f39354944d10",
+      "youtubeMusic": "",
+      "appleMusic": "https://music.apple.com/br/album/j-u-l-y-a-feat-vdyas-single/1856448707"
     },
     "type": "single",
     "duration": "3:00",

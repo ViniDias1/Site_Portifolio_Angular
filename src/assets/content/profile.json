@@ -1,8 +1,12 @@
 {
   "name": "Vinicius Dias Valença",
-  "title": "Backend Developer",
-  "bio": "Desenvolvedor Backend",
+  "title": "Desenvolvedor Fullstack",
+  "bio": "Desenvolvo API's, interfaces web responsivas e pipelines de dados com foco em escalabilidade e boas práticas de desenvolvimento. Experiência em projetos institucionais e acadêmicos, utilizando tecnologias modernas como Java, Spring Boot, NestJS, Angular, Next.js, Docker, inteligência artificial, entre outras.",
   "photo": "/assets/images/github_profile.jpg",
   "email": "viniciusdvalenca@gmail.com",
-  "location": "Aracaju, SE, Brasil"
+  "phone": "(79) 93300-8684",
+  "location": "Aracaju, SE, Brasil",
+  "linkedin": "https://www.linkedin.com/in/vinicius-dias-valenca",
+  "github": "https://github.com/ViniDias1",
+  "portfolio": "https://site-portifolio-xi.vercel.app/"
 }

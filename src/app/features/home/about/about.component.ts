@@ -23,10 +23,12 @@ export class AboutComponent implements OnInit, OnDestroy {
   private tabChangeListener?: EventListener;
 
   public profile = toSignal(this.contentService.getProfile());
-    public viewCV(): void {
-      window.open('/Currículo-VINICIUS DIAS VALENÇA.pdf', '_blank');
-      this.showCVOptions = false;
-    }
+  
+  public viewCV(): void {
+    window.open('/curriculo - VINICIUS DIAS VALENCA.pdf', '_blank');
+    this.showCVOptions = false;
+  }
+  
   public musicProfile = toSignal(this.contentService.getMusicProfile());
   public musicReleases = toSignal(this.contentService.getMusicReleases());
   public education = toSignal(this.contentService.getEducation());
@@ -63,15 +65,27 @@ export class AboutComponent implements OnInit, OnDestroy {
     this.activeDeveloperSubTab.set(subTab);
   }
 
-  public downloadCV(format: 'pdf' | 'docx'): void {
-    const fileMap = {
-      pdf: '/Currículo-VINICIUS DIAS VALENÇA.pdf',
-      docx: '/Vinicius Dias Valença.docx'
-    };
-    const link = document.createElement('a');
-    link.href = fileMap[format];
-    link.download = fileMap[format].split('/').pop()!;
-    link.click();
+  public async downloadCV(format: 'pdf' | 'docx'): Promise<void> {
+    const fileName = format === 'pdf' 
+      ? 'curriculo - VINICIUS DIAS VALENCA.pdf'
+      : 'curriculo - VINICIUS DIAS VALENCA.docx';
+    
+    try {
+      const response = await fetch(`/${fileName}`);
+      const blob = await response.blob();
+      
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Erro ao baixar o currículo:', error);
+    }
+    
     this.showCVOptions = false;
   }
 

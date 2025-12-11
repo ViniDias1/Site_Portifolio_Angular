@@ -6,8 +6,8 @@
     "longDescription": "Esse projeto exibe painéis Power BI desenvolvidos pelos setores do TRE-SE. Meu papel nesse projeto foi criar um banco de dados no Pocketbase para armazenar as informações dos painéis, desenvolver um BFF (Backend For Fronted) em Nitro.js para servir os dados ao frontend em Angular.",
     "tags": ["Angular", "TypeScript", "Pocketbase", "Nitro.js", "Nx CLI" , "GitLab", "Git"],
     "images": [
-      "/assets/images/projects/proj-1/Inserir imagem do projeto.png",
-      "/assets/images/projects/proj-1/Inserir imagem do projeto.png"
+      "/assets/images/projects/proj-1/img em breve.png",
+      "/assets/images/projects/proj-1/img em breve.png"
     ],
     "links": {
       "github": "https://github.com/usuario/ecommerce-api",
@@ -17,8 +17,8 @@
     "isPublic": false,
     "startDate": "2025",
     "endDate": "2025",
-    "status": "in-progress",
-    "progress": 75,
+    "status": "completed",
+    "progress": 100,
     "participants": [
       { "name": "Vini Dias", "github": "https://github.com/ViniDias1" }
     ]
@@ -29,7 +29,7 @@
     "description": "Sistema de acesso e gerenciamento de sessões plenárias do TRE-SE",
     "longDescription": "Sistema desenvolvido para visualização de sessões plenárias do TRE-SE, contendo transmissão ao vivo, gravações anteriores e materiais relacionados, além de todo o histórico das sessões.",
     "tags": ["Angular", "TypeScript", "Nitro.js", "Nx CLI", "GitLab", "Git"],
-    "images": ["/assets/images/projects/proj-2/Inserir imagem do projeto.png"],
+    "images": ["/assets/images/projects/proj-2/img em breve.png"],
     "links": {
       "github": "https://github.com/usuario/auth-system"
     },
@@ -52,8 +52,8 @@
     "longDescription": "Aprendendo a usar C++ e JUCE para desenvolver plugins de áudio compatíveis com diversas DAWs (Digital Audio Workstations).",
     "tags": ["C++", "JUCE", "Audio DSP", "VST", "AU"],
     "images": [
-      "/assets/images/projects/proj-3/Inserir imagem do projeto.png",
-      "/assets/images/projects/proj-3/Inserir imagem do projeto.png"
+      "/assets/images/projects/proj-3/img em breve.png",
+      "/assets/images/projects/proj-3/img em breve.png"
     ],
     "links": {
       "github": "https://github.com/ViniDias1/ProjetoPlugin",
@@ -102,25 +102,25 @@
     "startDate": "2021-10",
     "endDate": "2022-01",
     "status": "in-progress",
-    "progress": 40,
+    "progress": 55,
     "participants": []
   },
   {
     "id": "proj-6",
-    "title": "HipoRepo",
-    "description": "Base de dados não estruturados",
-    "longDescription": "Backend do sistema HipoRep, uma plataforma para gestão de repositórios digitais. Construído com NestJS, este serviço atua como uma camada de API para gerenciar documentos, usuários, metadados, etc. E se integra diretamente com o DSpace para operações no repositório.",
-    "tags": ["NestJS","Next.js", "TypeScript", "DSpace", "PostgreSQL", "Docker", "GitLab", "Git","JWT"],
+    "title": "HipoRepo - Repositório Digital UFS",
+    "description": "Plataforma institucional para gestão de repositórios digitais",
+    "longDescription": "Plataforma institucional da UFS para gestão de repositórios digitais destinada a armazenar e organizar dados não estruturados. Backend desenvolvido com NestJS atuando como camada de API para gerenciar documentos, usuários, metadados e integrações diretas com o DSpace. Frontend desenvolvido com Next.js (React + TypeScript) com foco em usabilidade, velocidade e arquitetura escalável. Implantação utilizando AWS EC2.",
+    "tags": ["NestJS", "Next.js", "React", "TypeScript", "PostgreSQL", "Redis", "Prisma", "Axios", "Passport.js", "DSpace", "AWS EC2", "Docker", "GitLab", "Git"],
     "images": ["/assets/images/projects/proj-6/hiporepo logo.jpg","/assets/images/projects/proj-6/login hipo repo.jpg"],
     "links": {
-      "github": "https://github.com/Projeto-IGNIS/todoList"
+      "github": "https://github.com/HipoRepo"
     },
-    "featured": false,
+    "featured": true,
     "isPublic": true,
-    "startDate": "2021-10",
-    "endDate": "2022-01",
-    "status": "in-progress",
-    "progress": 75,
+    "startDate": "2024-03",
+    "endDate": "2024-11",
+    "status": "completed",
+    "progress": 100,
     "participants": [
       { "name": "Vinicius Dias", "github": "https://github.com/ViniDias1" },
       { "name": "João Bosco", "github": "https://github.com/boscomontalvao" },
@@ -134,10 +134,49 @@
       { "name": "Prof. Ricardo Salgueiro", "github": "https://github.com/ricardosalgueiro" },
       { "name": "Prof. Edilayne Salgueiro", "github": "https://github.com/edilayne-salgueiro" },
       { "name": "Prof. André Britto", "github": "https://github.com/andcarv" },
-      { "name": "Prof. André Britto", "github": "https://github.com/andcarv" },
       { "name": "Prof. Michel dos Santos", "github": "" },
       { "name": "Prof. Rogério Patrício", "github": "https://github.com/Patricium" }
-
+    ]
+  },
+  {
+    "id": "proj-7",
+    "title": "TCC - Modelos Multimodais para Extração de Dados",
+    "description": "Pipeline local para extração de dados de imagens promocionais usando IA",
+    "longDescription": "Projeto de Trabalho de Conclusão de Curso focado no desenvolvimento de pipeline local utilizando modelos de computação multimodais on-premise (Gemma3 4b e 12b-qat) executados via Ollama para extração de dados de imagens promocionais. Arquitetura conteinerizada com Docker incluindo serviços de pré-processamento, inferência e análise. Automação do fluxo em Python com envio de imagens, leitura das respostas e padronização dos dados. Avaliação com métricas de performance (Precisão, Recall, F1-Score) e estudo comparativo sobre prompt engineering. Contribuição ao projeto LudiiPrice, validando a viabilidade de substituir soluções em nuvem por pipeline local.",
+    "tags": ["Python", "Docker", "Ollama", "Gemma3", "Machine Learning", "Computer Vision", "Prompt Engineering", "Data Extraction"],
+    "images": ["/assets/images/projects/proj-7/tcc-project.png"],
+    "links": {
+      "github": "https://github.com/ViniDias1/tcc-multimodal"
+    },
+    "featured": true,
+    "isPublic": true,
+    "startDate": "2024-08",
+    "endDate": "2024-12",
+    "status": "in-progress",
+    "progress": 85,
+    "participants": [
+      { "name": "Vinicius Dias", "github": "https://github.com/ViniDias1" }
+    ]
+  },
+  {
+    "id": "proj-8",
+    "title": "Projeto IGNIS - Plataforma de Aprendizado",
+    "description": "Iniciativa colaborativa para aprendizado de tecnologias e boas práticas",
+    "longDescription": "Projeto colaborativo criado e liderado para promover o aprendizado de novas tecnologias e boas práticas de desenvolvimento. Atuação como Tech Lead na definição de arquitetura, organização de equipes e tarefas, revisão de PRs e gestão de ambientes de desenvolvimento. Implementação de diversos projetos utilizando tecnologias como Airflow, Angular, Docker, Java, Spring Boot, Python, Redis, MongoDB, PostgreSQL e TypeScript. A iniciativa ampliou competências técnicas, desenvolveu soft skills e fortaleceu habilidades de colaboração, comunicação e liderança.",
+    "tags": ["Airflow", "Angular", "Docker", "Java", "Spring Boot", "Python", "Redis", "MongoDB", "PostgreSQL", "TypeScript", "Tech Lead"],
+    "images": ["/assets/images/projects/proj-4/ignis logo.jpg"],
+    "links": {
+      "github": "https://github.com/Projeto-IGNIS"
+    },
+    "featured": true,
+    "isPublic": true,
+    "startDate": "2023-01",
+    "endDate": "2024-06",
+    "status": "completed",
+    "progress": 100,
+    "participants": [
+      { "name": "Vinicius Dias", "github": "https://github.com/ViniDias1" },
+      { "name": "Tayssa Passos", "github": "https://github.com/Ms-footsteps" }
     ]
   }
 ]

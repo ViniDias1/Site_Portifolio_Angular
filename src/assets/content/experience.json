@@ -1,36 +1,96 @@
 [
   {
-    "company": "IOSE - Imprensa Oficial do Estado de Sergipe",
-    "role": "Estágio Suporte Técnico, Help Desk, Técnico de LGPD",
-    "from": "2023-08",
-    "to": "2025-01",
-    "description": "Concerto e manutenção de computadores, suporte técnico com foco em certificados digitais, configuração de redes e sistemas, além de auxiliar na manutenção dos documentos de transparência da instituição.",
-    "responsibilities": [ 
-      "Concertar e manter computadores e periféricos",
-      "Prestar suporte técnico aos usuários internos e externos",
-        "Auxiliar na manutenção dos documentos de transparência da instituição",
-      "Realizar manutenção de redes e sistemas"
-    ],
-    "technologies": [
-      "Certificados Digitais", "Redes", "Sistemas Operacionais", "Manutenção de Hardware", "Manutenção de Software"
-    ],
-    "location": "Aracaju, SE, Brasil"
-  },
-  {
-    "company": "TRE - Tribunal Regional Eleitoral de Sergipe",
-    "role": "Estágio Full Stack Developer",
+    "company": "TRE-SE - Tribunal Regional Eleitoral de Sergipe",
+    "role": "Desenvolvedor Fullstack",
     "from": "2025-02",
-    "to": "atualmente",
-    "description": "Desenvolvimento de sistemas web, integrações e desevolvimento de API's e novas funcionalidades.",
+    "to": "atual",
+    "description": "Desenvolvimento de sistemas web institucionais com foco em conformidade com LGPD, responsividade e experiência do usuário. Atuação em projetos de exibição de informações públicas e modernização de plataformas.",
     "responsibilities": [
-      "Desenvolvimento full stack com Nitron.js e Angular",
-      "Criação e manutenção de APIs RESTful",
-      "Criação e manutenção do banco de dados no Pocketbase"
+      "Desenvolvimento de Backend for Frontend (BFF) em Nitro, viabilizando acesso público a dashboards Power BI",
+      "Criação de interfaces responsivas em Angular com abordagem Mobile First",
+      "Estruturação, integração e gerenciamento de banco de dados com PocketBase",
+      "Implementação de integrações com sistemas institucionais (IPleno)",
+      "Participação em code reviews e versionamento com Git/GitLab",
+      "Colaboração com analistas e equipes internas para validação de requisitos"
     ],
     "technologies": [
-      "Node.js", "Pocketbase", "Java", "PostgreSQL", "Docker", "Git", "Nitro.js", "Angular", "TypeScript", "Nx CLI"
+      "Angular", "TypeScript", "Nitro.js", "PocketBase", "Git", "GitLab", "Nx CLI"
     ],
     "location": "Aracaju, SE, Brasil",
-    "relatedProjects": ["proj-1"]
+    "relatedProjects": ["proj-1", "proj-2"]
+  },
+  {
+    "company": "UFS - Universidade Federal de Sergipe",
+    "role": "Desenvolvedor Fullstack - Projeto HipoRepo",
+    "from": "2024-03",
+    "to": "2024-11",
+    "description": "Desenvolvimento de plataforma institucional para gestão de repositórios digitais destinada a armazenar e organizar dados não estruturados, com integração direta ao DSpace.",
+    "responsibilities": [
+      "Implementação do backend com NestJS, atuando como camada de API responsável por documentos, usuários e metadados",
+      "Desenvolvimento do frontend utilizando Next.js (React + TypeScript) com foco em usabilidade e arquitetura escalável",
+      "Integração direta com o sistema DSpace para gestão de repositórios",
+      "Implantação e hospedagem dos ambientes utilizando AWS EC2"
+    ],
+    "technologies": [
+      "NestJS", "TypeScript", "PostgreSQL", "Redis", "Prisma", "Axios", "Passport.js", "Next.js", "React", "AWS EC2"
+    ],
+    "location": "São Cristóvão, SE, Brasil",
+    "relatedProjects": ["proj-6"]
+  },
+  {
+    "company": "UFS - Universidade Federal de Sergipe",
+    "role": "Pesquisador / Desenvolvedor - TCC",
+    "from": "2024-08",
+    "to": "2024-12",
+    "description": "Pesquisa e desenvolvimento de pipeline local utilizando modelos de computação multimodais para extração de dados de imagens promocionais, como alternativa a soluções em nuvem.",
+    "responsibilities": [
+      "Desenvolvimento de pipeline local utilizando modelos Gemma3 (4b e 12b-qat) executados via Ollama",
+      "Criação de arquitetura conteinerizada com Docker incluindo serviços de pré-processamento, inferência e análise",
+      "Automação do fluxo em Python com envio de imagens, leitura de respostas e padronização de dados",
+      "Avaliação com métricas de performance (Precisão, Recall, F1-Score)",
+      "Estudo comparativo sobre prompt engineering e impacto na performance"
+    ],
+    "technologies": [
+      "Python", "Docker", "Ollama", "Gemma3", "Computer Vision", "Machine Learning"
+    ],
+    "location": "São Cristóvão, SE, Brasil",
+    "relatedProjects": ["proj-7"]
+  },
+  {
+    "company": "Projeto IGNIS",
+    "role": "Tech Lead / Desenvolvedor Fullstack",
+    "from": "2023-01",
+    "to": "2024-06",
+    "description": "Criação e liderança de projeto colaborativo voltado ao aprendizado de novas tecnologias e boas práticas de desenvolvimento, com foco em arquitetura de sistemas e trabalho em equipe.",
+    "responsibilities": [
+      "Definição da arquitetura de sistemas e organização de equipes",
+      "Gestão de tarefas, revisão de PRs e mentoria de desenvolvedores júnior",
+      "Implementação de pipelines de dados com Airflow",
+      "Desenvolvimento de APIs RESTful com Spring Boot",
+      "Gestão de ambientes de desenvolvimento e produção com Docker"
+    ],
+    "technologies": [
+      "Airflow", "Angular", "Docker", "Java", "Spring Boot", "Python", "Redis", "MongoDB", "PostgreSQL", "TypeScript"
+    ],
+    "location": "Remoto",
+    "relatedProjects": ["proj-4", "proj-8"]
+  },
+  {
+    "company": "IOSE - Imprensa Oficial do Estado de Sergipe",
+    "role": "Técnico de Suporte e Manutenção / Desenvolvimento / LGPD",
+    "from": "2023-08",
+    "to": "2025-01",
+    "description": "Suporte técnico e manutenção de sistemas, com foco em certificados digitais, autenticação biométrica e adequação do site institucional às diretrizes da LGPD.",
+    "responsibilities": [
+      "Suporte remoto e presencial para clientes de certificados digitais",
+      "Configuração de permissões e autenticação biométrica em sistemas",
+      "Atualização do site institucional conforme diretrizes da LGPD",
+      "Gestão de estagiários e comunicação com usuários internos e externos",
+      "Manutenção de computadores, redes e sistemas"
+    ],
+    "technologies": [
+      "Certificados Digitais", "LGPD", "Sistemas Operacionais", "Redes", "HTML", "CSS"
+    ],
+    "location": "Aracaju, SE, Brasil"
   }
 ]
